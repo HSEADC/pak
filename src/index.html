@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Домашняя страница - ПАК</h1>
+        <h2>Этапы собеседования</h2>
+        <a href='/interview/portfolio.html'>Портфолио</a>
+        <a href='/interview/cv.html'>Резюме</a>
+        <a href='/interview/interview.html'>Собеседование</a>
+        <br />
+        <a href='/skills/index.html'>Навыки</a>
+        <br />
+        <a href='/news/index.html'>Новости</a>
+        <br>
+        <div data-fs-success>Спасибо! Ваше сообщение успешно отправлено.</div>
+        <div data-fs-error>Ой! При отправке формы возникла проблема. Попробуйте ещё раз.</div>
+        <form id="my-form">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required data-fs-field />
+            <span data-fs-error="name"></span>
+
+            <label for="email">Почта:</label>
+            <input type="email" id="email" name="email" required data-fs-field />
+            <span data-fs-error="email"></span>
+
+            <label for="position">Должность:</label>
+            <input type="text" id="position" name="position" data-fs-field />
+            <span data-fs-error="position"></span>
+
+            <label for="message">Благодарственные слова:</label>
+            <textarea id="message" name="message" rows="5" required data-fs-field></textarea>
+            <span data-fs-error="message"></span>
+
+            <button type="submit" data-fs-submit-btn>Отправить</button>
+        </form>
+
+        <script>
+            window.formspree =
+            window.formspree ||
+            function () {
+                (formspree.q = formspree.q || []).push(arguments);
+            };
+            formspree("initForm", {
+                formElement: "#my-form",
+                formId: "meaezwjq",
+            });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    </body>
+</html>
