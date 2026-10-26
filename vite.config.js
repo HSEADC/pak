@@ -12,6 +12,30 @@ const pages = {
     chunks: [
       '/scripts/index.js'
     ]
+  },
+  about: {
+    file: 'about.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
+  },
+  articles: {
+    file: 'articles.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
+  },
+  glossary: {
+    file: 'glossary.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
+  },
+  notFound: {
+    file: '404.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
   }
 }
 

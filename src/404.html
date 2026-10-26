@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Страница не найдена · иинфа</title>
+        <meta name="robots" content="noindex" />
+        <link rel="preload" href="./fonts/RFDewiCondensed-Black.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="preload" href="./fonts/TTNeoris-Regular.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="stylesheet" href="./stylesheets/main.css" />
+        <script>document.documentElement.classList.add('js')</script>
+    </head>
+    <body>
+        <main class="hero notfound">
+            <nav class="nav" aria-label="Основное меню">
+                <a class="logo" href="./index.html" aria-label="иинфа, на главную">иинфа</a>
+            </nav>
+
+            <div class="notfound__stage">
+                <span class="notfound__code" aria-hidden="true">404</span>
+                <div class="notfound__mascot" role="img" aria-label="Грустный маскот иинфы">
+                    <img src="./images/mascot/sad-body.png" width="954" height="995" alt="" />
+                    <img class="notfound__eyes" src="./images/mascot/sad-eyes.png" width="394" height="212" alt="" />
+                </div>
+            </div>
+
+            <div class="notfound__content">
+                <h1 class="notfound__title">Такой страницы пока нет</h1>
+                <p>Узнай одним из&nbsp;первых, когда она появится! Для этого заполни форму.</p>
+                <form id="my-form" class="notfound__form">
+                    <label class="field">
+                        <span class="visually-hidden">Как к вам обращаться</span>
+                        <input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="given-name" required data-fs-field />
+                        <span class="field__error" data-fs-error="name"></span>
+                    </label>
+                    <label class="field">
+                        <span class="visually-hidden">Почта</span>
+                        <input type="email" name="email" placeholder="Почта" autocomplete="email" required data-fs-field />
+                        <span class="field__error" data-fs-error="email"></span>
+                    </label>
+                    <button class="button button--blue" type="submit" data-fs-submit-btn>Подписаться</button>
+                </form>
+                <p class="notfound__status" data-fs-success>Готово! Напишем, как только страница появится.</p>
+                <p class="notfound__status" data-fs-error>Не получилось отправить. Попробуйте ещё раз.</p>
+                <a class="notfound__home" href="./index.html">Вернуться на главную</a>
+            </div>
+        </main>
+
+        <script>
+            window.formspree =
+            window.formspree ||
+            function () {
+                (formspree.q = formspree.q || []).push(arguments);
+            };
+            formspree("initForm", {
+                formElement: "#my-form",
+                formId: "meaezwjq",
+            });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    </body>
+</html>

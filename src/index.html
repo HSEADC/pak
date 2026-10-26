@@ -13,176 +13,82 @@
     <body id="top">
         <header class="hero">
             <nav class="nav" aria-label="Основное меню">
-                <a class="logo" href="#top" aria-label="иинфа, на главную">иинфа</a>
+                <a class="logo" href="./index.html" aria-label="иинфа, на главную">иинфа</a>
                 <div class="nav__links">
-                    <a class="nav__link nav__link--active" href="#top" aria-current="page">Главная</a>
-                    <a class="nav__link" href="#articles">Статьи</a>
-                    <a class="nav__link" href="#glossary">Глоссарий</a>
+                    <a class="nav__link nav__link--active" href="./index.html" aria-current="page">Главная</a>
+                    <a class="nav__link" href="./articles.html">Статьи</a>
+                    <a class="nav__link" href="./glossary.html">Глоссарий</a>
+                    <a class="nav__link" href="./about.html">О сайте</a>
                 </div>
             </nav>
 
             <div class="hero__grid">
                 <h1 class="hero__title">
-                    <span class="line"><span>Добро пожаловать</span></span>
-                    <span class="line"><span>в 21 век</span></span>
+                    <span class="line"><span>Без паники,</span></span>
+                    <span class="line"><span>это просто ИИ</span></span>
                 </h1>
+                <img class="hero__mascot" src="./images/mascot/wave.png" width="458" height="476" alt="Маскот иинфы машет рукой" fetchpriority="high" />
                 <div class="hero__foot">
-                    <p class="hero__lead">Нейросети без айтишного языка: что это такое, как ими пользоваться и&nbsp;где они правда экономят время на&nbsp;работе и&nbsp;дома.</p>
+                    <p class="hero__lead">Разбираем нейросети по&nbsp;шагам: от&nbsp;первого вопроса чат-боту до&nbsp;привычки, которая экономит часы.</p>
                     <a class="button" href="#subscribe">Подписаться на рассылку</a>
                 </div>
             </div>
         </header>
 
         <main>
-            <section class="intro" aria-labelledby="intro-title">
-                <figure class="intro__picture">
-                    <img src="./images/elektro.jpg" width="1050" height="1400" alt="Робот Электро с собакой Спарко, которых показывали на Всемирной выставке 1939 года" fetchpriority="high" data-drift />
-                    <figcaption>Так ИИ представляли в&nbsp;1939: робот Электро и&nbsp;его пёс Спарко</figcaption>
-                </figure>
-                <div class="intro__text">
-                    <h2 id="intro-title">Понятно объясняем, что такое ИИ</h2>
-                    <p class="statement">Нейросеть&nbsp;— не&nbsp;робот из&nbsp;кино. Это программа: вы пишете ей обычными словами, а&nbsp;она отвечает, считает и&nbsp;рисует.</p>
-                    <p>Мы пишем для тех, кто застал дисковый телефон, плёночный «Зенит» и&nbsp;первые компьютеры на&nbsp;работе. Вы видели, как менялась техника, и&nbsp;с&nbsp;этим разберётесь. Без терминов, а&nbsp;если без них никак, сразу объясняем.</p>
+            <section class="news" id="articles" aria-labelledby="articles-title">
+                <h2 id="articles-title">Статьи</h2>
+                <div class="news__grid">
+                    <a class="card card--big" href="./news/index.html">
+                        <span class="card__picture card__picture--pink"><img src="./images/mascot/letter.png" width="906" height="758" alt="Маскот иинфы пишет письмо ручкой" loading="lazy" /></span>
+                        <span class="card__meta">В работе · 6 мин</span>
+                        <h3>Письмо начальству за&nbsp;две минуты</h3>
+                    </a>
+                    <a class="card card--wide" href="./news/index.html">
+                        <span class="card__picture card__picture--blue"><img src="./images/mascot/garden.png" width="460" height="460" alt="Маскот иинфы в садовом фартуке с лопаткой" loading="lazy" /></span>
+                        <span class="card__meta">Дома и в быту · 4 мин</span>
+                        <h3>ИИ на даче: рассада, грядки и&nbsp;вредители</h3>
+                    </a>
+                    <a class="card" href="./news/index.html">
+                        <span class="card__picture card__picture--blue"><img src="./images/mascot/painter.png" width="428" height="428" alt="Маскот иинфы рисует картину на мольберте" loading="lazy" /></span>
+                        <span class="card__meta">Дома и в быту · 5 мин</span>
+                        <h3>Раскрашиваем старые фото</h3>
+                    </a>
+                    <a class="card" href="./news/index.html">
+                        <span class="card__picture card__picture--green"><img src="./images/mascot/phone.png" width="612" height="460" alt="Встревоженный маскот иинфы говорит по телефону" loading="lazy" /></span>
+                        <span class="card__meta">Безопасность · 6 мин</span>
+                        <h3>Голос мамы может быть подделкой</h3>
+                    </a>
                 </div>
+                <a class="button" href="./articles.html">Все статьи</a>
             </section>
 
-            <section class="kinds" aria-labelledby="kinds-title">
-                <div class="kinds__head">
-                    <h2 id="kinds-title">Разберём по&nbsp;порядку</h2>
-                    <p>Нейросети бывают для разных целей. Вот четыре главных и&nbsp;то, что каждая умеет уже сегодня.</p>
+            <section class="quizzes" id="quizzes" aria-labelledby="quizzes-title">
+                <div class="quizzes__head">
+                    <h2 id="quizzes-title">Вы нуб или про?</h2>
+                    <p>Пройдите наши квизы и&nbsp;узнайте свой уровень познаний в&nbsp;нейросетях</p>
                 </div>
-                <article class="sheet sheet--orange">
-                    <h3 class="sheet__title">Тексты и&nbsp;письма</h3>
-                    <ul class="sheet__list">
-                        <li>Напишет письмо, жалобу или поздравление</li>
-                        <li>Перескажет длинный договор в&nbsp;пяти строчках</li>
-                        <li>Исправит ошибки и&nbsp;сделает тон вежливее</li>
-                        <li>Переведёт с&nbsp;любого языка</li>
-                    </ul>
-                    <ul class="sheet__tools" aria-label="Сервисы"><li>ChatGPT</li><li>GigaChat</li><li>YandexGPT</li><li>Claude</li></ul>
-                    <img class="sheet__picture" src="./images/typewriter.jpg" width="1400" height="933" alt="Печатная машинка Olympia Simplex" loading="lazy" />
-                </article>
-                <article class="sheet sheet--pink">
-                    <h3 class="sheet__title">Картинки и&nbsp;фото</h3>
-                    <ul class="sheet__list">
-                        <li>Нарисует открытку по&nbsp;описанию</li>
-                        <li>Уберёт с&nbsp;фото лишнего человека</li>
-                        <li>Раскрасит и&nbsp;восстановит старый снимок</li>
-                        <li>Покажет кухню после ремонта</li>
-                    </ul>
-                    <ul class="sheet__tools" aria-label="Сервисы"><li>Шедеврум</li><li>Kandinsky</li><li>Midjourney</li></ul>
-                    <img class="sheet__picture" src="./images/zenit.jpg" width="1354" height="1400" alt="Плёночный фотоаппарат «Зенит-11» на штативе" loading="lazy" />
-                </article>
-                <article class="sheet sheet--green">
-                    <h3 class="sheet__title">Голос и&nbsp;звонки</h3>
-                    <ul class="sheet__list">
-                        <li>Переведёт голосовое сообщение в&nbsp;текст</li>
-                        <li>Прочитает вслух статью или книгу</li>
-                        <li>Ответит голосом, как собеседник по&nbsp;телефону</li>
-                        <li>Поможет поговорить с&nbsp;иностранцем</li>
-                    </ul>
-                    <ul class="sheet__tools" aria-label="Сервисы"><li>Алиса</li><li>голосовой режим ChatGPT</li></ul>
-                    <img class="sheet__picture" src="./images/phone.jpg" width="1400" height="1050" alt="Чёрный телефон с дисковым номеронабирателем" loading="lazy" />
-                </article>
-                <article class="sheet sheet--blue">
-                    <h3 class="sheet__title">Таблицы и&nbsp;цифры</h3>
-                    <ul class="sheet__list">
-                        <li>Составит таблицу семейных расходов</li>
-                        <li>Подскажет формулу для Excel</li>
-                        <li>Сравнит предложения по&nbsp;ипотеке</li>
-                        <li>Найдёт главное в&nbsp;длинном отчёте</li>
-                    </ul>
-                    <ul class="sheet__tools" aria-label="Сервисы"><li>ChatGPT</li><li>GigaChat</li><li>Copilot в&nbsp;Excel</li></ul>
-                    <img class="sheet__picture" src="./images/punch-card.jpg" width="1400" height="700" alt="Перфокарта: так в компьютер вводили данные полвека назад" loading="lazy" />
-                </article>
-            </section>
-
-            <section class="then" aria-labelledby="then-title">
-                <div class="then__head">
-                    <h2 id="then-title">Тогда и&nbsp;сейчас</h2>
-                    <p>Первый электронный компьютер ENIAC занимал зал в&nbsp;167 квадратных метров, и&nbsp;новую задачу ему по&nbsp;несколько дней задавали проводами. Нейросеть, которая умеет несравнимо больше, сегодня помещается в&nbsp;кармане и&nbsp;понимает обычную речь.</p>
-                </div>
-                <div class="then__pair">
-                    <div class="then__item">
-                        <p class="then__figure">27&nbsp;т</p>
-                        <p class="then__caption"><strong>1946.</strong> Столько весил ENIAC. Программировали его шесть человек, переключая провода и&nbsp;тумблеры.</p>
-                    </div>
-                    <div class="then__item">
-                        <p class="then__figure then__figure--blue">200&nbsp;г</p>
-                        <p class="then__caption"><strong>Сегодня.</strong> Примерно столько весит смартфон. Чтобы дать ему задачу, достаточно написать или сказать её вслух.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="try" id="try" aria-labelledby="try-title">
-                <div class="try__head">
-                    <h2 id="try-title">Попробуйте сами</h2>
-                    <p>Выберите задачу, и&nbsp;мы покажем, что написать нейросети. Скопируйте текст и&nbsp;вставьте в&nbsp;любой чат-бот: ChatGPT, GigaChat или Алису.</p>
-                </div>
-                <div class="try__tasks" role="tablist" aria-label="Задачи" aria-orientation="vertical">
-                    <button class="task" role="tab" aria-selected="true" aria-controls="task-uk" id="tab-uk">Письмо в&nbsp;УК</button>
-                    <button class="task" role="tab" aria-selected="false" aria-controls="task-menu" id="tab-menu">Меню на&nbsp;неделю</button>
-                    <button class="task" role="tab" aria-selected="false" aria-controls="task-congrats" id="tab-congrats">Поздравление</button>
-                    <button class="task" role="tab" aria-selected="false" aria-controls="task-contract" id="tab-contract">Понять договор</button>
-                    <button class="task" role="tab" aria-selected="false" aria-controls="task-trip" id="tab-trip">Поездка</button>
-                    <button class="task" role="tab" aria-selected="false" aria-controls="task-excel" id="tab-excel">Формула в&nbsp;Excel</button>
-                </div>
-                <div class="try__panels">
-                    <article class="prompt" role="tabpanel" id="task-uk" aria-labelledby="tab-uk">
-                        <h3>Что написать</h3>
-                        <p class="prompt__text">Помоги составить официальное письмо в управляющую компанию. Уже две недели в подъезде дома по адресу [адрес] протекает крыша над пятым этажом, на стене плесень. Я звонил(а) диспетчеру [дата], но ничего не сделали. Попроси устранить протечку в течение 10 дней и сослаться на нужные правила. Тон вежливый, но твёрдый.</p>
-                        <p class="prompt__result"><strong>Что получите:</strong> готовое письмо с&nbsp;шапкой, ссылкой на&nbsp;правила содержания дома и&nbsp;сроком ответа. Останется подставить адрес и&nbsp;подписать.</p>
-                        <button class="button" type="button" data-copy>Скопировать запрос</button>
+                <div class="quizzes__grid">
+                    <article class="quiz">
+                        <span class="quiz__picture"></span>
+                        <h3>Основы ИИ</h3>
+                        <p>Если у&nbsp;вас на&nbsp;телефоне уже стоит DeepSeek, то&nbsp;вам сюда</p>
+                        <a class="button quiz__button" href="#">Пройти квиз</a>
                     </article>
-                    <article class="prompt" role="tabpanel" id="task-menu" aria-labelledby="tab-menu">
-                        <h3>Что написать</h3>
-                        <p class="prompt__text">Составь меню ужинов на неделю для семьи из трёх человек. В холодильнике есть: курица, картошка, капуста, яйца, гречка, морковь, сыр. Готовить хочу не дольше 40 минут. В конце дай общий список покупок, сгруппированный по отделам магазина.</p>
-                        <p class="prompt__result"><strong>Что получите:</strong> семь ужинов с&nbsp;короткими рецептами и&nbsp;один список покупок, который можно отправить в&nbsp;мессенджер.</p>
-                        <button class="button" type="button" data-copy>Скопировать запрос</button>
+                    <article class="quiz">
+                        <span class="quiz__picture"></span>
+                        <h3>AI Power User</h3>
+                        <p>Платная подписка, подключённые MCP-серверы&nbsp;— как далеко вы уйдёте?</p>
+                        <a class="button quiz__button" href="#">Пройти квиз</a>
                     </article>
-                    <article class="prompt" role="tabpanel" id="task-congrats" aria-labelledby="tab-congrats">
-                        <h3>Что написать</h3>
-                        <p class="prompt__text">Напиши тёплое поздравление коллеге с 55-летием. Её зовут Ольга Петровна, мы работаем вместе 12 лет, она главный бухгалтер, любит дачу и путешествия. Без пафоса и стихов, 5–6 предложений, от имени всего отдела.</p>
-                        <p class="prompt__result"><strong>Что получите:</strong> несколько вариантов текста. Попросите «сделай короче» или «добавь юмора», если первый не&nbsp;подошёл.</p>
-                        <button class="button" type="button" data-copy>Скопировать запрос</button>
-                    </article>
-                    <article class="prompt" role="tabpanel" id="task-contract" aria-labelledby="tab-contract">
-                        <h3>Что написать</h3>
-                        <p class="prompt__text">Ниже текст договора с интернет-провайдером. Объясни простыми словами: сколько я буду платить, что будет, если захочу расторгнуть договор раньше, и есть ли пункты, на которые стоит обратить внимание. Текст: [вставьте договор]</p>
-                        <p class="prompt__result"><strong>Что получите:</strong> короткий пересказ и&nbsp;список подозрительных мест. Важные решения всё равно сверяйте с&nbsp;самим договором.</p>
-                        <button class="button" type="button" data-copy>Скопировать запрос</button>
-                    </article>
-                    <article class="prompt" role="tabpanel" id="task-trip" aria-labelledby="tab-trip">
-                        <h3>Что написать</h3>
-                        <p class="prompt__text">Мы с женой хотим съездить на выходные из Москвы на машине, не дальше 300 км. Любим старые города, хорошую еду и неспешные прогулки, не любим толпы. Предложи три варианта с маршрутом на два дня и примерным бюджетом.</p>
-                        <p class="prompt__result"><strong>Что получите:</strong> три готовых маршрута. Часы работы музеев и&nbsp;цены перепроверьте на&nbsp;сайтах: нейросеть может знать устаревшие данные.</p>
-                        <button class="button" type="button" data-copy>Скопировать запрос</button>
-                    </article>
-                    <article class="prompt" role="tabpanel" id="task-excel" aria-labelledby="tab-excel">
-                        <h3>Что написать</h3>
-                        <p class="prompt__text">В Excel в столбце A даты покупок, в столбце B категория (продукты, транспорт, дом), в столбце C сумма. Напиши формулу, которая посчитает, сколько я потратил(а) на продукты за октябрь, и объясни по шагам, куда её вставить.</p>
-                        <p class="prompt__result"><strong>Что получите:</strong> готовую формулу и&nbsp;инструкцию, куда нажимать. Если что-то не&nbsp;сработает, просто напишите, какую ошибку видите.</p>
-                        <button class="button" type="button" data-copy>Скопировать запрос</button>
+                    <article class="quiz">
+                        <span class="quiz__picture"></span>
+                        <h3>Не вайбкодом единым</h3>
+                        <p>Насколько вы знаете, на&nbsp;что ещё способны флагманские модели</p>
+                        <a class="button quiz__button" href="#">Пройти квиз</a>
                     </article>
                 </div>
-            </section>
-
-            <section class="articles" id="articles" aria-labelledby="articles-title">
-                <div class="articles__head">
-                    <h2 id="articles-title">Статьи</h2>
-                    <p>Разборы от&nbsp;первого шага до&nbsp;привычки. Каждый читается за&nbsp;чашку чая.</p>
-                </div>
-                <ul class="articles__list">
-                    <li><a href="./news/index.html"><span class="row__title">Что такое нейросеть: объясняем на пальцах</span><span class="row__rubric">С чего начать</span><span class="row__time">5 мин</span></a></li>
-                    <li><a href="./news/index.html"><span class="row__title">Первый разговор с чат-ботом по шагам</span><span class="row__rubric">С чего начать</span><span class="row__time">7 мин</span></a></li>
-                    <li><a href="./news/index.html"><span class="row__title">Как спросить, чтобы ответ был полезным</span><span class="row__rubric">Навык</span><span class="row__time">6 мин</span></a></li>
-                    <li><a href="./news/index.html"><span class="row__title">Нейросеть на работе: письма, отчёты, таблицы</span><span class="row__rubric">В работе</span><span class="row__time">8 мин</span></a></li>
-                    <li><a href="./news/index.html"><span class="row__title">Звонок «от сына»: как распознать дипфейк</span><span class="row__rubric">Безопасность</span><span class="row__time">6 мин</span></a></li>
-                    <li><a href="./news/index.html"><span class="row__title">ИИ на даче: рассада, грядки и вредители</span><span class="row__rubric">Дома и в быту</span><span class="row__time">4 мин</span></a></li>
-                    <li><a href="./news/index.html"><span class="row__title">Как оживить старые семейные фотографии</span><span class="row__rubric">Дома и в быту</span><span class="row__time">5 мин</span></a></li>
-                    <li><a href="./news/index.html"><span class="row__title">Платить за нейросеть или хватит бесплатной</span><span class="row__rubric">Обзоры</span><span class="row__time">9 мин</span></a></li>
-                </ul>
-                <a class="button" href="./news/index.html">Все статьи</a>
+                <a class="button button--outline quizzes__more" href="#">Все квизы</a>
             </section>
 
             <section class="glossary" id="glossary" aria-labelledby="glossary-title">
@@ -222,44 +128,12 @@
                         <p>Общее название для программ, которые выполняют задачи, раньше доступные только людям. Нейросети стали самой заметной его частью.</p>
                     </details>
                 </div>
+                <a class="button button--outline glossary__more" href="./glossary.html">Полный глоссарий</a>
+                <img class="glossary__peek" src="./images/mascot/peek.png" width="400" height="186" alt="" loading="lazy" />
             </section>
 
-            <section class="faq" aria-labelledby="faq-title">
-                <div class="faq__head">
-                    <h2 id="faq-title">Честно о страшном</h2>
-                    <img src="./images/army-computers.jpg" width="1400" height="1110" alt="Сотрудницы армейской лаборатории держат блоки четырёх первых компьютеров, 1962 год" loading="lazy" />
-                </div>
-                <div class="faq__band">
-                    <h3>ИИ заберёт мою работу?</h3>
-                    <p>Скорее изменит её. Тот, кто поручает нейросети рутину, освобождает время для того, что требует опыта и&nbsp;живого общения. Мы показываем, какие задачи можно отдать уже сейчас.</p>
-                </div>
-                <div class="faq__band">
-                    <h3>Я не дружу с компьютером. Справлюсь?</h3>
-                    <p>Если вы пишете сообщения в&nbsp;мессенджере, справитесь. С&nbsp;нейросетью говорят обычными словами, никаких команд учить не&nbsp;нужно.</p>
-                </div>
-                <div class="faq__band">
-                    <h3>Это платно?</h3>
-                    <p>У большинства сервисов есть бесплатная версия: её хватает для писем, вопросов и&nbsp;картинок. Платная нужна для больших объёмов, и&nbsp;в&nbsp;статьях мы пишем, где сколько стоит.</p>
-                </div>
-                <div class="faq__band">
-                    <h3>Безопасно рассказывать нейросети о себе?</h3>
-                    <p>Не вводите паспортные данные, номера карт, пароли и&nbsp;медицинские документы. В&nbsp;остальном ведите себя как с&nbsp;незнакомым специалистом: по&nbsp;делу и&nbsp;без лишнего.</p>
-                </div>
-                <div class="faq__band">
-                    <h3>Нейросеть может ошибаться?</h3>
-                    <p>Да, и&nbsp;уверенным тоном. Цифры, даты, законы и&nbsp;советы о&nbsp;здоровье всегда перепроверяйте, а&nbsp;с&nbsp;лечением идите к&nbsp;врачу.</p>
-                </div>
-                <div class="faq__band">
-                    <h3>С чего начать?</h3>
-                    <p>Выберите одну задачу, которая отнимает у&nbsp;вас время, и&nbsp;поручите её чат-боту. Готовые запросы есть выше, в&nbsp;разделе <a href="#try">«Попробуйте сами»</a>.</p>
-                </div>
-            </section>
-
-            <section class="subscribe" id="subscribe" aria-labelledby="subscribe-title">
-                <h2 id="subscribe-title" class="subscribe__title">
-                    <span>Одно письмо</span>
-                    <span>в неделю</span>
-                </h2>
+            <section class="subscribe subscribe--light" id="subscribe" aria-labelledby="subscribe-title">
+                <h2 id="subscribe-title" class="subscribe__heading">Узнавай первым о&nbsp;новых технологиях</h2>
                 <div class="subscribe__middle">
                     <form id="my-form" class="subscribe__form">
                         <label class="field">
@@ -272,7 +146,7 @@
                             <input type="email" name="email" autocomplete="email" required data-fs-field />
                             <span class="field__error" data-fs-error="email"></span>
                         </label>
-                        <button class="button button--orange" type="submit" data-fs-submit-btn>Подписаться</button>
+                        <button class="button button--pink" type="submit" data-fs-submit-btn>Подписаться</button>
                     </form>
                     <p class="subscribe__note">Новый разбор, один полезный запрос и&nbsp;честные новости. Отписаться можно в&nbsp;один клик.</p>
                     <p class="subscribe__status" data-fs-success>Готово! Первое письмо придёт в&nbsp;ближайший понедельник.</p>
@@ -283,15 +157,15 @@
 
         <footer class="footer">
             <figure class="footer__picture">
-                <img src="./images/eniac-beck.jpg" width="1400" height="1070" alt="Глен Бек и Бетти Снайдер программируют ENIAC, около 1947 года" loading="lazy" />
+                <img src="./images/eniac-mascot.webp" width="1440" height="1800" alt="Маскот иинфы с планшетом в зале компьютера ENIAC" loading="lazy" />
             </figure>
             <div class="footer__side">
-                <a class="logo logo--small" href="#top">иинфа</a>
+                <a class="logo logo--small" href="./index.html">иинфа</a>
                 <ul class="footer__menu">
-                    <li><a href="#top">Главная</a></li>
-                    <li><a href="#articles">Статьи</a></li>
-                    <li><a href="#glossary">Глоссарий</a></li>
-                    <li><a href="#try">Попробовать</a></li>
+                    <li><a href="./index.html">Главная</a></li>
+                    <li><a href="./articles.html">Статьи</a></li>
+                    <li><a href="./glossary.html">Глоссарий</a></li>
+                    <li><a href="./about.html">О сайте</a></li>
                     <li><a href="#subscribe">Рассылка</a></li>
                 </ul>
                 <div class="footer__blocks">
@@ -299,12 +173,8 @@
                         <h2>Написать нам</h2>
                         <p><a href="mailto:hello@infa.media">hello@infa.media</a></p>
                     </div>
-                    <div>
-                        <h2>Ещё на сайте</h2>
-                        <p><a href="./news/index.html">Новости</a>, <a href="./skills/index.html">Навыки</a>, <a href="./interview/portfolio.html">Портфолио</a>, <a href="./interview/cv.html">Резюме</a>, <a href="./interview/interview.html">Собеседование</a></p>
-                    </div>
                 </div>
-                <p class="footer__credits">© 2026 иинфа. Фото: U.S. Army (ENIAC и первые армейские компьютеры, общественное достояние); Daderot (Электро, общественное достояние); Sammlung der Medien und Wissenschaft (печатная машинка, CC BY 4.0); Dmitry Makeev («Зенит», CC BY-SA 4.0); Infrogmation of New Orleans (телефон, CC BY-SA 4.0); Maksym Kozlenko (перфокарта, CC BY-SA 4.0). Все через Wikimedia Commons.</p>
+                <p class="footer__wordmark" aria-hidden="true">иинфа</p>
             </div>
         </footer>
 

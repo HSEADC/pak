@@ -63,3 +63,72 @@ if (!reduced && drifting.length) {
     }, { passive: true })
     update()
 }
+
+// Страница статей: фильтр по рубрикам, повторный клик снимает фильтр
+const filters = [...document.querySelectorAll('[data-filter]')]
+
+if (filters.length) {
+    const catalog = document.querySelector('.catalog')
+    const cards = [...catalog.querySelectorAll('[data-rubric]')]
+    const grids = [...catalog.querySelectorAll('.news__grid')]
+    const empty = catalog.querySelector('.catalog__empty')
+
+    filters.forEach((button) => {
+        button.addEventListener('click', () => {
+            const active = button.getAttribute('aria-pressed') !== 'true'
+            const rubric = active ? button.dataset.filter : ''
+            filters.forEach((other) => other.setAttribute('aria-pressed', String(active && other === button)))
+            catalog.classList.toggle('is-filtered', active)
+            cards.forEach((card) => {
+                card.hidden = rubric !== '' && card.dataset.rubric !== rubric
+            })
+            grids.forEach((grid) => {
+                grid.hidden = [...grid.children].every((card) => card.hidden)
+            })
+            empty.hidden = cards.some((card) => !card.hidden)
+        })
+    })
+}
+
+// Глоссарий: фильтр терминов по темам, повторный клик снимает фильтр
+const termFilters = [...document.querySelectorAll('[data-term-filter]')]
+
+if (termFilters.length) {
+    const terms = [...document.querySelectorAll('.terms details')]
+
+    termFilters.forEach((button) => {
+        button.addEventListener('click', () => {
+            const active = button.getAttribute('aria-pressed') !== 'true'
+            const tag = active ? button.dataset.termFilter : ''
+            termFilters.forEach((other) => other.setAttribute('aria-pressed', String(active && other === button)))
+            terms.forEach((term) => {
+                term.hidden = tag !== '' && !term.dataset.tags.split('|').includes(tag)
+            })
+        })
+    })
+}
+
+// 404: глаза маскота следят за курсором
+const eyes = document.querySelector('.notfound__eyes')
+
+if (eyes && !reduced) {
+    const mascot = eyes.parentElement
+
+    addEventListener('pointermove', (event) => {
+        // центр глаз считаем от маскота, а не от самих глаз, чтобы сдвиг не влиял на расчёт
+        const box = mascot.getBoundingClientRect()
+        const dx = event.clientX - (box.left + box.width / 2)
+        const dy = event.clientY - (box.top + box.height * 0.435)
+        const distance = Math.hypot(dx, dy) || 1
+        // максимальный сдвиг — 6% ширины маскота, ближе к глазам сдвиг меньше
+        const limit = mascot.offsetWidth * 0.06
+        const shift = Math.min(limit, distance / 8)
+        eyes.style.setProperty('--eye-x', `${((dx / distance) * shift).toFixed(1)}px`)
+        eyes.style.setProperty('--eye-y', `${((dy / distance) * shift * 0.7).toFixed(1)}px`)
+    }, { passive: true })
+
+    document.addEventListener('pointerleave', () => {
+        eyes.style.setProperty('--eye-x', '0px')
+        eyes.style.setProperty('--eye-y', '0px')
+    })
+}
