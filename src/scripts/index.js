@@ -36,7 +36,7 @@ document.querySelectorAll('[data-copy]').forEach((button) => {
             range.selectNodeContents(button.closest('.prompt').querySelector('.prompt__text'))
             getSelection().removeAllRanges()
             getSelection().addRange(range)
-            button.textContent = 'Выделено, нажмите Ctrl+C'
+            button.textContent = 'Текст выделен, скопируйте его'
         }
         setTimeout(() => (button.textContent = label), 2000)
     })

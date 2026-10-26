@@ -31,6 +31,48 @@ const pages = {
       '/scripts/index.js'
     ]
   },
+  articleLetter: {
+    file: 'article-letter.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
+  },
+  articleGarden: {
+    file: 'article-garden.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
+  },
+  articlePhotos: {
+    file: 'article-photos.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
+  },
+  articleDeepfake: {
+    file: 'article-deepfake.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
+  },
+  articleFirstChat: {
+    file: 'article-first-chat.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
+  },
+  articlePrompt: {
+    file: 'article-prompt.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
+  },
+  articlePaid: {
+    file: 'article-paid.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
+  },
   notFound: {
     file: '404.html',
     chunks: [

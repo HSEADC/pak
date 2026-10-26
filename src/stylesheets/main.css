@@ -212,14 +212,16 @@ a {
     display: inline-flex;
     align-items: center;
     height: 52px;
-    padding: 0 22px 4px;
+    padding: 0 22px;
     border-radius: 999px;
     background: var(--black);
-    color: var(--white);
-    font: italic 900 34px / 1 var(--font-display);
-    letter-spacing: -0.03em;
     text-decoration: none;
     transition: transform 200ms var(--ease-out);
+}
+
+.logo img {
+    width: auto;
+    height: 24px;
 }
 
 .logo:hover {
@@ -228,7 +230,11 @@ a {
 
 .logo--small {
     height: 44px;
-    font-size: 28px;
+    padding: 0 18px;
+}
+
+.logo--small img {
+    height: 20px;
 }
 
 .nav {
@@ -711,13 +717,13 @@ html:not(.js) .filters {
 }
 
 .story__blob--blue {
-    top: -20vmax;
+    top: -4vmax;
     right: -40vmax;
     background: radial-gradient(closest-side, rgb(9 122 187 / 0.75), rgb(9 122 187 / 0)); /* taste-skill-ignore */
 }
 
 .story__blob--green {
-    top: 18vmax;
+    top: 26vmax;
     left: -42vmax;
     background: radial-gradient(closest-side, rgb(181 205 58 / 0.85), rgb(181 205 58 / 0)); /* taste-skill-ignore */
 }
@@ -917,6 +923,138 @@ html:not(.js) .filters {
 .notfound__home {
     margin-top: 8px;
     font-size: 16px;
+}
+
+/* страница статьи */
+
+.hero__title.article__title {
+    font-size: clamp(40px, 6vw, 96px);
+}
+
+.article__meta {
+    font-size: 16px;
+    text-align: right;
+}
+
+.article {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gap);
+    padding: 64px var(--margin) var(--section);
+}
+
+.article__body {
+    grid-column: 1 / 9;
+    display: grid;
+    gap: 72px;
+}
+
+.article__body section {
+    display: grid;
+    gap: 24px;
+}
+
+.article__body p {
+    max-width: 62ch;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.article__body h2 {
+    font-size: clamp(32px, 3vw, 44px);
+}
+
+.article__body .article__intro {
+    font-size: 24px;
+    line-height: 1.45;
+}
+
+.article__body .prompt h3,
+.callout h3 {
+    font-size: 24px;
+}
+
+.article__body .prompt .prompt__text {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.article__body .prompt .prompt__result {
+    font-size: 16px;
+}
+
+.article__prompts {
+    display: grid;
+    gap: 16px;
+}
+
+.article__phrases {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.article__phrases li {
+    padding: 14px 22px 16px;
+    border-radius: 16px;
+    background: var(--beige);
+    font-size: 18px;
+}
+
+.callout {
+    display: grid;
+    gap: 12px;
+    padding: clamp(24px, 3vw, 40px);
+    border-radius: var(--radius);
+    background: var(--orange);
+}
+
+.article__aside {
+    grid-column: 10 / 13;
+    align-self: start;
+    position: sticky;
+    top: 32px;
+    display: grid;
+    justify-items: start;
+    gap: 20px;
+}
+
+.article__aside h2 {
+    font-size: var(--size-h3);
+}
+
+.article__aside ul {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 12px;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+}
+
+.article__aside a:not(.button) {
+    text-decoration: none;
+    transition: color 200ms;
+}
+
+.article__aside a:not(.button):hover {
+    color: var(--blue);
+}
+
+.related {
+    position: relative;
+    display: grid;
+    gap: 48px;
+    padding: 0 var(--margin) var(--section);
+}
+
+.related__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gap);
 }
 
 /* главная: квизы */
@@ -1658,33 +1796,27 @@ html:not(.js) .filters {
 /* подвал */
 
 .footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 100svh;
-    background: var(--beige);
-}
-
-.footer__picture {
     overflow: hidden;
+    background: #131313;
+    color: var(--beige);
 }
 
-.footer__picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 60%;
-    filter: grayscale(1);
-}
-
-.footer__side {
+.footer__top {
     display: grid;
-    grid-template-rows: auto 1fr auto auto;
-    gap: 64px;
-    padding: 32px var(--margin) 24px clamp(24px, 6vw, 96px);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gap);
+    padding: 32px var(--margin) 0;
 }
 
-.footer__side > .logo {
-    justify-self: start;
+.footer__nav {
+    grid-column: 1 / 4;
+    display: grid;
+    justify-items: start;
+    gap: 48px;
+}
+
+.logo.logo--light {
+    background: var(--beige);
 }
 
 .footer__menu {
@@ -1692,61 +1824,90 @@ html:not(.js) .filters {
     padding: 0;
     list-style: none;
     display: grid;
-    align-content: start;
-    gap: 20px;
+    gap: 8px;
 }
 
 .footer__menu a {
     display: inline-block;
-    font: 900 clamp(36px, 3.6vw, 56px) / 1 var(--font-display);
-    letter-spacing: -0.02em;
+    font: 400 clamp(32px, 3.4vw, 52px) / 1.3 var(--font-text);
+    letter-spacing: -0.01em;
     text-decoration: none;
     transition: transform 250ms var(--ease-out), color 200ms;
 }
 
-.footer__menu:hover a {
-    color: #6b6461;
-}
-
 .footer__menu a:hover {
-    color: var(--black);
+    color: var(--pink);
     transform: translateX(12px);
 }
 
-.footer__blocks {
+.footer__contacts {
+    grid-column: 4 / 8;
+    align-self: start;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gap);
-    font-size: 16px;
+    justify-items: start;
+    gap: 8px;
+    margin-top: 108px;
 }
 
-.footer__blocks h2 {
-    font: 500 16px / 1.4 var(--font-text);
+.footer__contacts h2 {
+    font: 500 18px / 1.4 var(--font-text);
     letter-spacing: 0;
-    margin-bottom: 6px;
 }
 
-.footer__credits {
-    font-size: 16px;
-    line-height: 1.45;
+.footer__contacts a {
+    font-size: 18px;
+    text-decoration: none;
 }
 
-.footer__side {
-    position: relative;
-    overflow: hidden;
+.footer__contacts a:hover {
+    color: var(--pink);
 }
 
-.footer__side:has(.footer__wordmark) {
-    padding-bottom: clamp(150px, 17vw, 300px);
+.footer__social {
+    display: flex;
+    gap: 16px;
+    margin: 32px 0 0;
+    padding: 0;
+    list-style: none;
 }
 
+.footer__social a {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--beige);
+    color: #131313;
+    transition: transform 200ms var(--ease-out), background-color 200ms;
+}
+
+.footer__social a:hover {
+    background: var(--pink);
+    color: #131313;
+    transform: translateY(-3px);
+}
+
+.footer__social svg {
+    width: 26px;
+    height: 26px;
+}
+
+/* лампочка свисает от верхнего края подвала */
+.footer__mascot {
+    grid-column: 9 / 13;
+    justify-self: end;
+    width: clamp(220px, 22vw, 400px);
+    height: auto;
+    margin-top: -32px;
+}
+
+/* логотип во всю ширину, хвост «ф» уходит за нижний край */
 .footer__wordmark {
-    position: absolute;
-    right: -0.12em;
-    bottom: -0.16em;
-    font: italic 900 clamp(120px, 17vw, 300px) / 1 var(--font-display);
-    letter-spacing: -0.04em;
-    pointer-events: none;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 40px 0 -6.6vw;
 }
 
 /* движение */
@@ -1973,8 +2134,11 @@ html:not(.js) .filters {
 
     .logo {
         height: 44px;
-        padding: 0 16px 3px;
-        font-size: 28px;
+        padding: 0 16px;
+    }
+
+    .logo img {
+        height: 20px;
     }
 
     .hero__title {
@@ -2171,6 +2335,29 @@ html:not(.js) .filters {
         width: 100%;
     }
 
+    .article__body,
+    .article__aside {
+        grid-column: 1 / -1;
+        position: static;
+    }
+
+    .article__aside {
+        margin-top: 72px;
+    }
+
+    .related__grid {
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+    }
+
+    .article__meta {
+        text-align: left;
+    }
+
+    .hero__title.article__title {
+        font-size: 7.2vw;
+    }
+
     .notfound__stage {
         margin-top: 24px;
     }
@@ -2199,10 +2386,6 @@ html:not(.js) .filters {
 
     .subscribe--light {
         padding: 72px var(--margin);
-    }
-
-    .footer__side {
-        padding-bottom: 32vw;
     }
 
     .faq__head {
@@ -2242,24 +2425,24 @@ html:not(.js) .filters {
         grid-template-columns: 1fr;
     }
 
-    .footer {
-        grid-template-columns: 1fr;
+    .footer__top {
+        row-gap: 48px;
     }
 
-    .footer__picture {
-        height: 50svh;
+    .footer__nav,
+    .footer__contacts {
+        grid-column: 1 / -1;
+        margin-top: 0;
     }
 
-    .footer__side {
-        padding: 32px var(--margin);
-        gap: 48px;
+    .footer__mascot {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        width: 52vw;
+        margin-top: -32px;
     }
 
     .footer__menu a {
-        font-size: 8vw;
-    }
-
-    .footer__blocks {
-        grid-template-columns: 1fr;
+        font-size: 9vw;
     }
 }
