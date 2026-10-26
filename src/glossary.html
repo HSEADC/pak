@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Глоссарий · иинфа</title>
+        <meta name="description" content="Глоссарий иинфы: термины из мира нейросетей простыми словами." />
+        <link rel="preload" href="./fonts/RFDewiCondensed-Black.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="preload" href="./fonts/TTNeoris-Regular.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="stylesheet" href="./stylesheets/main.css" />
+        <script>document.documentElement.classList.add('js')</script>
+    </head>
+    <body id="top">
+        <header class="hero hero--page hero--blue">
+            <nav class="nav" aria-label="Основное меню">
+                <a class="logo" href="./index.html"><img src="./images/logo-white.svg" width="2820" height="723" alt="иинфа, на главную" /></a>
+                <div class="nav__links">
+                    <a class="nav__link" href="./index.html">Главная</a>
+                    <a class="nav__link" href="./articles.html">Статьи</a>
+                    <a class="nav__link nav__link--active" href="./glossary.html" aria-current="page">Глоссарий</a>
+                    <a class="nav__link" href="./about.html">О сайте</a>
+                </div>
+            </nav>
+
+            <div class="hero__grid">
+                <img class="hero__mascot hero__mascot--top" src="./images/mascot/magnifier.webp" width="1176" height="1176" alt="Маскот иинфы разглядывает что-то через лупу" fetchpriority="high" />
+                <h1 class="hero__title">Глоссарий</h1>
+                <div class="hero__foot">
+                    <p class="hero__lead">Все термины, которые пригодятся при&nbsp;работе с&nbsp;ИИ.</p>
+                    <a class="button" href="#subscribe">Подписаться на рассылку</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="terms" aria-labelledby="terms-filter-title">
+                <div class="terms__filter">
+                    <h2 id="terms-filter-title" class="filters__title">Фильтр</h2>
+                    <div class="filters__list" role="group" aria-labelledby="terms-filter-title">
+                        <button class="filter" type="button" aria-pressed="false" data-term-filter="Безопасность">Безопасность</button>
+                        <button class="filter" type="button" aria-pressed="false" data-term-filter="Дома и в быту">Дома и в быту</button>
+                        <button class="filter" type="button" aria-pressed="false" data-term-filter="В работе">В работе</button>
+                        <button class="filter" type="button" aria-pressed="false" data-term-filter="Узкопрофильные">Узкопрофильные</button>
+                        <button class="filter" type="button" aria-pressed="false" data-term-filter="Программирование">Программирование</button>
+                        <button class="filter" type="button" aria-pressed="false" data-term-filter="Бизнес">Бизнес</button>
+                    </div>
+                </div>
+                <div class="terms__columns">
+                    <div class="terms__column">
+                        <details data-tags="Дома и в быту|В работе">
+                            <summary>Промпт</summary>
+                            <p>Запрос, который вы пишете нейросети. Чем подробнее объясните задачу, тем лучше ответ, как с&nbsp;новым сотрудником.</p>
+                        </details>
+                        <details data-tags="Безопасность|В работе">
+                            <summary>Галлюцинация</summary>
+                            <p>Когда нейросеть уверенно сообщает то, чего нет: несуществующую книгу, неправильную дату, выдуманный закон. Поэтому важное всегда перепроверяйте.</p>
+                        </details>
+                        <details data-tags="Безопасность|Дома и в быту">
+                            <summary>Дипфейк</summary>
+                            <p>Поддельное видео или голос, созданные нейросетью. Ими пользуются мошенники, например в&nbsp;звонках «от&nbsp;родственника». Перезвоните человеку сами.</p>
+                        </details>
+                        <details data-tags="Узкопрофильные|Программирование">
+                            <summary>Датасет</summary>
+                            <p>Набор данных, на&nbsp;котором учат нейросеть: тексты, картинки, записи. От&nbsp;его качества зависит, насколько умной получится модель.</p>
+                        </details>
+                        <details data-tags="Узкопрофильные">
+                            <summary>Обучение модели</summary>
+                            <p>Процесс, в&nbsp;котором нейросеть разбирает миллионы примеров и&nbsp;учится находить в&nbsp;них закономерности. Занимает недели и&nbsp;требует мощных компьютеров.</p>
+                        </details>
+                        <details data-tags="В работе|Дома и в быту">
+                            <summary>Языковая модель</summary>
+                            <p>Нейросеть, которая работает с&nbsp;текстом: понимает вопросы, пишет ответы, переводит и&nbsp;пересказывает. На&nbsp;ней построены ChatGPT, GigaChat и&nbsp;Алиса.</p>
+                        </details>
+                        <details data-tags="Дома и в быту">
+                            <summary>Распознавание речи</summary>
+                            <p>Перевод голоса в&nbsp;текст. Так работают голосовые помощники и&nbsp;расшифровка голосовых сообщений.</p>
+                        </details>
+                        <details data-tags="В работе|Программирование">
+                            <summary>Контекстное окно</summary>
+                            <p>Сколько текста нейросеть может «держать в&nbsp;голове» за&nbsp;один разговор. Если переписка слишком длинная, начало она забывает.</p>
+                        </details>
+                        <details data-tags="Бизнес|Программирование">
+                            <summary>Дообучение</summary>
+                            <p>Когда готовую модель доучивают на&nbsp;своих данных, например на&nbsp;документах компании, чтобы она лучше отвечала по&nbsp;конкретной теме.</p>
+                        </details>
+                        <details data-tags="Узкопрофильные" open>
+                            <summary>Машинное обучение</summary>
+                            <p>Способ создавать ИИ, который учится на&nbsp;данных: находит закономерности и&nbsp;использует их, чтобы делать прогнозы и&nbsp;решать задачи без готовых правил для каждого случая.</p>
+                        </details>
+                        <details data-tags="Дома и в быту">
+                            <summary>Искусственный интеллект</summary>
+                            <p>Общее название для программ, которые выполняют задачи, раньше доступные только людям. Нейросети стали самой заметной его частью.</p>
+                        </details>
+                    </div>
+                    <div class="terms__column">
+                        <details data-tags="Дома и в быту|В работе">
+                            <summary>Чат-бот</summary>
+                            <p>Окно переписки с&nbsp;нейросетью. Выглядит как мессенджер: вы пишете, она отвечает.</p>
+                        </details>
+                        <details data-tags="Дома и в быту" open>
+                            <summary>Нейросеть</summary>
+                            <p>Программа, которая научилась на&nbsp;огромном количестве примеров: текстов, картинок, записей речи. Она не&nbsp;думает как человек, а&nbsp;угадывает самый подходящий ответ.</p>
+                        </details>
+                        <details data-tags="Программирование|Бизнес">
+                            <summary>Токен</summary>
+                            <p>Кусочек текста, которым считает нейросеть: слово или часть слова. По&nbsp;токенам считают длину запроса и&nbsp;цену платных сервисов.</p>
+                        </details>
+                        <details data-tags="Программирование">
+                            <summary>Алгоритм</summary>
+                            <p>Чёткая последовательность шагов для решения задачи. Рецепт борща тоже алгоритм.</p>
+                        </details>
+                        <details data-tags="Узкопрофильные|Дома и в быту">
+                            <summary>Компьютерное зрение</summary>
+                            <p>Умение программы понимать изображения: находить лица, читать номера машин, узнавать растения по&nbsp;фото.</p>
+                        </details>
+                        <details data-tags="Дома и в быту">
+                            <summary>Генерация</summary>
+                            <p>Создание нового: текста, картинки, музыки. «Сгенерировать открытку» значит попросить нейросеть её нарисовать.</p>
+                        </details>
+                        <details data-tags="В работе|Бизнес">
+                            <summary>ИИ-агент</summary>
+                            <p>Нейросеть, которая не&nbsp;только отвечает, но&nbsp;и&nbsp;действует: ищет в&nbsp;интернете, заполняет таблицы, отправляет письма по&nbsp;вашему поручению.</p>
+                        </details>
+                        <details data-tags="Дома и в быту">
+                            <summary>Мультимодальность</summary>
+                            <p>Когда нейросеть понимает сразу несколько видов данных: текст, фото, голос. Можно показать ей фото квитанции и&nbsp;спросить, что в&nbsp;ней.</p>
+                        </details>
+                        <details data-tags="Программирование">
+                            <summary>Эмбеддинг</summary>
+                            <p>Способ превратить текст или картинку в&nbsp;набор чисел, чтобы компьютер мог сравнивать их по&nbsp;смыслу. На&nbsp;этом работает умный поиск.</p>
+                        </details>
+                        <details data-tags="В работе|Бизнес">
+                            <summary>Модель</summary>
+                            <p>Конкретная нейросеть со&nbsp;своим именем и&nbsp;версией: GPT, GigaChat, Claude. Как марки автомобилей: делают одно, но&nbsp;каждая по-своему.</p>
+                        </details>
+                    </div>
+                </div>
+                <img class="catalog__peek" src="./images/mascot/peek.png" width="400" height="186" alt="" loading="lazy" />
+            </section>
+
+            <section class="subscribe subscribe--light" id="subscribe" aria-labelledby="subscribe-title">
+                <h2 id="subscribe-title" class="subscribe__heading">Узнавай первым о&nbsp;новых технологиях</h2>
+                <div class="subscribe__middle">
+                    <form id="my-form" class="subscribe__form">
+                        <label class="field">
+                            <span>Как к вам обращаться</span>
+                            <input type="text" name="name" autocomplete="given-name" required data-fs-field />
+                            <span class="field__error" data-fs-error="name"></span>
+                        </label>
+                        <label class="field">
+                            <span>Почта</span>
+                            <input type="email" name="email" autocomplete="email" required data-fs-field />
+                            <span class="field__error" data-fs-error="email"></span>
+                        </label>
+                        <button class="button button--pink" type="submit" data-fs-submit-btn>Подписаться</button>
+                    </form>
+                    <p class="subscribe__note">Новый разбор, один полезный запрос и&nbsp;честные новости. Отписаться можно в&nbsp;один клик.</p>
+                    <p class="subscribe__status" data-fs-success>Готово! Первое письмо придёт в&nbsp;ближайший понедельник.</p>
+                    <p class="subscribe__status" data-fs-error>Не получилось отправить. Попробуйте ещё раз.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__top">
+                <div class="footer__nav">
+                    <a class="logo logo--light" href="./index.html"><img src="./images/logo-black.svg" width="2820" height="723" alt="иинфа, на главную" loading="lazy" /></a>
+                    <ul class="footer__menu">
+                        <li><a href="./index.html">Главная</a></li>
+                        <li><a href="./articles.html">Статьи</a></li>
+                        <li><a href="./glossary.html">Глоссарий</a></li>
+                        <li><a href="./about.html">О сайте</a></li>
+                        <li><a href="#subscribe">Рассылка</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contacts">
+                    <h2>Написать нам</h2>
+                    <p><a href="mailto:packfordesigners@gmail.com">packfordesigners@gmail.com</a></p>
+                    <ul class="footer__social">
+                        <li><a href="#" aria-label="иинфа в Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/></svg></a></li>
+                        <li><a href="#" aria-label="иинфа в Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.6 0 1.9l4.6 1.6 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.5 4.7 3.5c.7.5 1.6.1 1.8-.7l3.1-15.2c.2-1-.8-1.8-1.8-1.3Z" fill="currentColor"/><path d="m9.2 14.6 8.6-7.4" stroke="#EDE4E0" stroke-width="1.6" stroke-linecap="round"/></svg></a></li>
+                    </ul>
+                </div>
+                <img class="footer__mascot" src="./images/mascot/lamp.png" width="782" height="817" alt="Маскот иинфы включает лампочку" loading="lazy" />
+            </div>
+            <img class="footer__wordmark" src="./images/logo-beige.svg" width="2820" height="723" alt="" loading="lazy" />
+        </footer>
+
+        <script>
+            window.formspree =
+            window.formspree ||
+            function () {
+                (formspree.q = formspree.q || []).push(arguments);
+            };
+            formspree("initForm", {
+                formElement: "#my-form",
+                formId: "meaezwjq",
+            });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    </body>
+</html>

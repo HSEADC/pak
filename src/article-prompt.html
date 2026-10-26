@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Как написать промпт, чтобы ответ был полезным · иинфа</title>
+        <meta name="description" content="Простая формула хорошего запроса к нейросети: кто вы, что нужно, для чего и в каком виде. С примерами до и после." />
+        <link rel="preload" href="./fonts/RFDewiCondensed-Black.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="preload" href="./fonts/TTNeoris-Regular.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="stylesheet" href="./stylesheets/main.css" />
+        <script>document.documentElement.classList.add('js')</script>
+    </head>
+    <body id="top">
+        <header class="hero hero--page">
+            <nav class="nav" aria-label="Основное меню">
+                <a class="logo" href="./index.html"><img src="./images/logo-white.svg" width="2820" height="723" alt="иинфа, на главную" /></a>
+                <div class="nav__links">
+                    <a class="nav__link" href="./index.html">Главная</a>
+                    <a class="nav__link nav__link--active" href="./articles.html">Статьи</a>
+                    <a class="nav__link" href="./glossary.html">Глоссарий</a>
+                    <a class="nav__link" href="./about.html">О сайте</a>
+                </div>
+            </nav>
+
+            <div class="hero__grid">
+                <img class="hero__mascot hero__mascot--top" src="./images/mascot/thumbs.png" width="641" height="585" alt="Маскот иинфы показывает большой палец" fetchpriority="high" />
+                <h1 class="hero__title article__title">Как&nbsp;написать промпт, чтобы ответ был полезным</h1>
+                <div class="hero__foot">
+                    <p class="hero__lead">Ответ нейросети настолько хорош, насколько понятен ваш запрос. Разбираем простую формулу, которая работает почти всегда.</p>
+                    <p class="article__meta"><a href="./articles.html">Навык</a> · 6 мин · 21 сентября 2026</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="article">
+            <article class="article__body">
+                <p class="article__intro">Промпт — это ваш запрос к&nbsp;нейросети. Самая частая ошибка — писать коротко, как&nbsp;в&nbsp;поисковике: «рецепт пирога». Нейросеть ответит, но&nbsp;наугад. Если объяснить задачу как&nbsp;новому сотруднику, ответ сразу станет полезным.</p>
+
+                <section id="formula" aria-labelledby="formula-title">
+                    <h2 id="formula-title">Формула из&nbsp;четырёх частей</h2>
+                    <p>Хороший запрос отвечает на&nbsp;четыре вопроса. Не&nbsp;обязательно соблюдать порядок — главное, чтобы ничего не&nbsp;потерялось.</p>
+                    <ul class="article__phrases">
+                        <li>Кто вы и&nbsp;для&nbsp;кого ответ</li>
+                        <li>Что&nbsp;нужно сделать</li>
+                        <li>Какие есть условия</li>
+                        <li>В&nbsp;каком виде нужен ответ</li>
+                    </ul>
+                    <p>Достаточно одного-двух предложений на&nbsp;каждую часть.</p>
+                </section>
+
+                <section id="compare" aria-labelledby="compare-title">
+                    <h2 id="compare-title">До&nbsp;и&nbsp;после</h2>
+                    <p>Запрос «напиши поздравление» даст общий шаблон. А&nbsp;вот так нейросеть поймёт, что&nbsp;именно нужно.</p>
+                    <div class="prompt prompt--inline">
+                        <h3>Хороший запрос</h3>
+                        <p class="prompt__text">Я бухгалтер, пишу от всего отдела. Нужно поздравить коллегу Ольгу Петровну с 55-летием. Мы работаем вместе 12 лет, она любит дачу и путешествия. Без стихов и пафоса, 5–6 предложений, тон тёплый.</p>
+                        <p class="prompt__result"><strong>Что получите:</strong> поздравление, которое звучит лично, а&nbsp;не&nbsp;как&nbsp;открытка из&nbsp;киоска.</p>
+                        <button class="button" type="button" data-copy>Скопировать запрос</button>
+                    </div>
+                </section>
+
+                <section id="format" aria-labelledby="format-title">
+                    <h2 id="format-title">Попросите нужный формат</h2>
+                    <p>Нейросеть умеет отвечать таблицей, списком, коротко или подробно. Скажите это прямо — сэкономите время на&nbsp;переделках.</p>
+                    <ul class="article__phrases">
+                        <li>«Ответь таблицей»</li>
+                        <li>«Не&nbsp;больше пяти пунктов»</li>
+                        <li>«Объясни как&nbsp;для&nbsp;новичка»</li>
+                        <li>«Сначала главное, потом детали»</li>
+                    </ul>
+                    <p>Такие фразы можно добавлять в&nbsp;конец любого запроса.</p>
+                </section>
+
+                <section id="iterate" aria-labelledby="iterate-title">
+                    <h2 id="iterate-title">Уточняйте, а&nbsp;не&nbsp;начинайте заново</h2>
+                    <p>Если ответ не&nbsp;подошёл, не&nbsp;пишите новый запрос с&nbsp;нуля. Скажите, что&nbsp;исправить: нейросеть помнит весь разговор и&nbsp;доработает результат.</p>
+                    <aside class="callout">
+                        <h3>Совет</h3>
+                        <p>Удачные запросы сохраняйте в&nbsp;заметках. Через месяц у&nbsp;вас будет своя библиотека шаблонов, в&nbsp;которых останется только поменять детали.</p>
+                    </aside>
+                </section>
+
+                <p class="article__outro">Попробуйте прямо сейчас переписать по&nbsp;формуле свой последний вопрос нейросети и&nbsp;сравните ответы.</p>
+            </article>
+
+            <aside class="article__aside" aria-label="Содержание статьи">
+                <h2>Содержание</h2>
+                <ul>
+                    <li><a href="#formula">Формула из&nbsp;четырёх частей</a></li>
+                    <li><a href="#compare">До&nbsp;и&nbsp;после</a></li>
+                    <li><a href="#format">Попросите нужный формат</a></li>
+                    <li><a href="#iterate">Уточняйте, а&nbsp;не&nbsp;начинайте заново</a></li>
+                </ul>
+                <a class="button" href="#subscribe">Подписаться на рассылку</a>
+            </aside>
+            </div>
+
+        <section class="related" aria-labelledby="related-title">
+            <h2 id="related-title">Читайте также</h2>
+            <div class="related__grid">
+                <a class="card" href="./article-paid.html">
+                    <span class="card__picture card__picture--grey"><img src="./images/mascot/money.webp" width="1190" height="1190" alt="Маскот иинфы сидит на горе денег и монет" loading="lazy" /></span>
+                    <span class="card__meta">Обзоры · 9 мин</span>
+                    <h3>Платить за&nbsp;нейросеть или хватит бесплатной</h3>
+                </a>
+                <a class="card" href="./article-letter.html">
+                    <span class="card__picture card__picture--pink"><img src="./images/mascot/letter.png" width="906" height="758" alt="Маскот иинфы пишет письмо ручкой" loading="lazy" /></span>
+                    <span class="card__meta">В работе · 6 мин</span>
+                    <h3>Письмо начальству за&nbsp;две минуты</h3>
+                </a>
+                <a class="card" href="./article-garden.html">
+                    <span class="card__picture card__picture--blue"><img src="./images/mascot/garden.png" width="460" height="460" alt="Маскот иинфы в садовом фартуке с лопаткой" loading="lazy" /></span>
+                    <span class="card__meta">Дома и в быту · 4 мин</span>
+                    <h3>ИИ на&nbsp;даче: рассада, грядки и&nbsp;вредители</h3>
+                </a>
+            </div>
+            <img class="catalog__peek" src="./images/mascot/peek.png" width="400" height="186" alt="" loading="lazy" />
+        </section>
+
+            <section class="subscribe subscribe--light" id="subscribe" aria-labelledby="subscribe-title">
+                <h2 id="subscribe-title" class="subscribe__heading">Узнавай первым о&nbsp;новых технологиях</h2>
+                <div class="subscribe__middle">
+                    <form id="my-form" class="subscribe__form">
+                        <label class="field">
+                            <span>Как к вам обращаться</span>
+                            <input type="text" name="name" autocomplete="given-name" required data-fs-field />
+                            <span class="field__error" data-fs-error="name"></span>
+                        </label>
+                        <label class="field">
+                            <span>Почта</span>
+                            <input type="email" name="email" autocomplete="email" required data-fs-field />
+                            <span class="field__error" data-fs-error="email"></span>
+                        </label>
+                        <button class="button button--pink" type="submit" data-fs-submit-btn>Подписаться</button>
+                    </form>
+                    <p class="subscribe__note">Новый разбор, один полезный запрос и&nbsp;честные новости. Отписаться можно в&nbsp;один клик.</p>
+                    <p class="subscribe__status" data-fs-success>Готово! Первое письмо придёт в&nbsp;ближайший понедельник.</p>
+                    <p class="subscribe__status" data-fs-error>Не получилось отправить. Попробуйте ещё раз.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__top">
+                <div class="footer__nav">
+                    <a class="logo logo--light" href="./index.html"><img src="./images/logo-black.svg" width="2820" height="723" alt="иинфа, на главную" loading="lazy" /></a>
+                    <ul class="footer__menu">
+                        <li><a href="./index.html">Главная</a></li>
+                        <li><a href="./articles.html">Статьи</a></li>
+                        <li><a href="./glossary.html">Глоссарий</a></li>
+                        <li><a href="./about.html">О сайте</a></li>
+                        <li><a href="#subscribe">Рассылка</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contacts">
+                    <h2>Написать нам</h2>
+                    <p><a href="mailto:packfordesigners@gmail.com">packfordesigners@gmail.com</a></p>
+                    <ul class="footer__social">
+                        <li><a href="#" aria-label="иинфа в Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/></svg></a></li>
+                        <li><a href="#" aria-label="иинфа в Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.6 0 1.9l4.6 1.6 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.5 4.7 3.5c.7.5 1.6.1 1.8-.7l3.1-15.2c.2-1-.8-1.8-1.8-1.3Z" fill="currentColor"/><path d="m9.2 14.6 8.6-7.4" stroke="#EDE4E0" stroke-width="1.6" stroke-linecap="round"/></svg></a></li>
+                    </ul>
+                </div>
+                <img class="footer__mascot" src="./images/mascot/lamp.png" width="782" height="817" alt="Маскот иинфы включает лампочку" loading="lazy" />
+            </div>
+            <img class="footer__wordmark" src="./images/logo-beige.svg" width="2820" height="723" alt="" loading="lazy" />
+        </footer>
+
+        <script>
+            window.formspree =
+            window.formspree ||
+            function () {
+                (formspree.q = formspree.q || []).push(arguments);
+            };
+            formspree("initForm", {
+                formElement: "#my-form",
+                formId: "meaezwjq",
+            });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    </body>
+</html>

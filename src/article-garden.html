@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ИИ на даче: рассада, грядки и вредители · иинфа</title>
+        <meta name="description" content="Как нейросеть помогает на даче: календарь рассады под ваш регион, план грядок и определение вредителей по фото." />
+        <link rel="preload" href="./fonts/RFDewiCondensed-Black.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="preload" href="./fonts/TTNeoris-Regular.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="stylesheet" href="./stylesheets/main.css" />
+        <script>document.documentElement.classList.add('js')</script>
+    </head>
+    <body id="top">
+        <header class="hero hero--page">
+            <nav class="nav" aria-label="Основное меню">
+                <a class="logo" href="./index.html"><img src="./images/logo-white.svg" width="2820" height="723" alt="иинфа, на главную" /></a>
+                <div class="nav__links">
+                    <a class="nav__link" href="./index.html">Главная</a>
+                    <a class="nav__link nav__link--active" href="./articles.html">Статьи</a>
+                    <a class="nav__link" href="./glossary.html">Глоссарий</a>
+                    <a class="nav__link" href="./about.html">О сайте</a>
+                </div>
+            </nav>
+
+            <div class="hero__grid">
+                <img class="hero__mascot hero__mascot--top" src="./images/mascot/garden.png" width="460" height="460" alt="Маскот иинфы в садовом фартуке с лопаткой" fetchpriority="high" />
+                <h1 class="hero__title article__title">ИИ на&nbsp;даче: рассада, грядки и&nbsp;вредители</h1>
+                <div class="hero__foot">
+                    <p class="hero__lead">Нейросеть не&nbsp;вскопает грядку, зато составит календарь посадок под&nbsp;ваш регион, подскажет, что&nbsp;сажать рядом, и&nbsp;по&nbsp;фото поймёт, кто ест капусту.</p>
+                    <p class="article__meta"><a href="./articles.html">Дома и в быту</a> · 4 мин · 19 октября 2026</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="article">
+            <article class="article__body">
+                <p class="article__intro">Дачные советы обычно собирают по&nbsp;крупицам: у&nbsp;соседки, в&nbsp;старой тетради, на&nbsp;форумах. Нейросеть быстро сводит всё в&nbsp;один понятный план. Главное — рассказать ей про&nbsp;ваш участок, а&nbsp;не&nbsp;спрашивать «как&nbsp;вырастить помидоры» вообще.</p>
+
+                <section id="calendar" aria-labelledby="calendar-title">
+                    <h2 id="calendar-title">Календарь рассады</h2>
+                    <p>Сроки посева зависят от&nbsp;региона и&nbsp;от&nbsp;того, есть ли&nbsp;у&nbsp;вас теплица. Укажите это в&nbsp;запросе, и&nbsp;нейросеть посчитает даты от&nbsp;средней даты последних заморозков.</p>
+                    <div class="prompt prompt--inline">
+                        <h3>Запрос для&nbsp;календаря</h3>
+                        <p class="prompt__text">Я живу в Подмосковье, у меня есть теплица из поликарбоната. Хочу вырастить томаты, перцы, огурцы и бархатцы. Составь календарь: когда сеять рассаду дома, когда пикировать и когда высаживать в теплицу и в открытый грунт. Оформи таблицей по месяцам.</p>
+                        <p class="prompt__result"><strong>Что получите:</strong> таблицу с&nbsp;датами по&nbsp;каждой культуре. Сверьте её с&nbsp;прогнозом погоды на&nbsp;весну: заморозки каждый год приходят по-разному.</p>
+                        <button class="button" type="button" data-copy>Скопировать запрос</button>
+                    </div>
+                </section>
+
+                <section id="beds" aria-labelledby="beds-title">
+                    <h2 id="beds-title">План грядок</h2>
+                    <p>Нейросеть знает, какие культуры дружат, а&nbsp;какие мешают друг другу, и&nbsp;помнит про&nbsp;севооборот. Опишите размеры участка и&nbsp;что&nbsp;росло там в&nbsp;прошлом году.</p>
+                    <div class="prompt prompt--inline">
+                        <h3>Запрос для&nbsp;плана</h3>
+                        <p class="prompt__text">У меня шесть грядок размером 1 на 4 метра. В прошлом году на первой и второй была картошка, на третьей капуста, на остальных зелень. Предложи, что посадить в этом году с учётом севооборота и соседства растений. Объясни коротко, почему так.</p>
+                        <p class="prompt__result"><strong>Что получите:</strong> схему посадок по&nbsp;грядкам и&nbsp;короткое объяснение к&nbsp;каждой.</p>
+                        <button class="button" type="button" data-copy>Скопировать запрос</button>
+                    </div>
+                </section>
+
+                <section id="pests" aria-labelledby="pests-title">
+                    <h2 id="pests-title">Кто ест капусту</h2>
+                    <p>Многие чат-боты понимают фотографии. Сфотографируйте лист с&nbsp;повреждениями крупно и&nbsp;при&nbsp;дневном свете, прикрепите снимок и&nbsp;спросите, что&nbsp;это.</p>
+                    <ul class="article__phrases">
+                        <li>«Что&nbsp;это за&nbsp;вредитель?»</li>
+                        <li>«Чем опасно для&nbsp;урожая?»</li>
+                        <li>«Как&nbsp;бороться без&nbsp;химии?»</li>
+                        <li>«Что&nbsp;сделать осенью, чтобы не&nbsp;повторилось?»</li>
+                    </ul>
+                    <aside class="callout">
+                        <h3>Важно</h3>
+                        <p>Нейросеть может ошибиться с&nbsp;определением, а&nbsp;с&nbsp;дозировками — тем более. Перед обработкой любым препаратом читайте инструкцию на&nbsp;упаковке и&nbsp;соблюдайте сроки ожидания до&nbsp;сбора урожая.</p>
+                    </aside>
+                </section>
+
+                <section id="harvest" aria-labelledby="harvest-title">
+                    <h2 id="harvest-title">Что&nbsp;делать с&nbsp;урожаем</h2>
+                    <p>Когда кабачков стало слишком много, нейросеть подскажет рецепты заготовок и&nbsp;посчитает, сколько нужно банок, соли и&nbsp;сахара.</p>
+                    <div class="prompt prompt--inline">
+                        <h3>Запрос для&nbsp;заготовок</h3>
+                        <p class="prompt__text">У меня 8 килограммов кабачков и 3 килограмма помидоров. Предложи три рецепта заготовок на зиму без стерилизации в духовке. Для каждого дай список продуктов и сколько получится банок по 0,5 литра.</p>
+                        <p class="prompt__result"><strong>Что получите:</strong> три рецепта со&nbsp;списком покупок и&nbsp;примерным выходом банок.</p>
+                        <button class="button" type="button" data-copy>Скопировать запрос</button>
+                    </div>
+                </section>
+
+                <p class="article__outro">Сохраните переписку с&nbsp;нейросетью: следующей весной можно будет просто продолжить её и&nbsp;спросить, что&nbsp;поменять с&nbsp;учётом нового опыта.</p>
+            </article>
+
+            <aside class="article__aside" aria-label="Содержание статьи">
+                <h2>Содержание</h2>
+                <ul>
+                    <li><a href="#calendar">Календарь рассады</a></li>
+                    <li><a href="#beds">План грядок</a></li>
+                    <li><a href="#pests">Кто ест капусту</a></li>
+                    <li><a href="#harvest">Что&nbsp;делать с&nbsp;урожаем</a></li>
+                </ul>
+                <a class="button" href="#subscribe">Подписаться на рассылку</a>
+            </aside>
+            </div>
+
+        <section class="related" aria-labelledby="related-title">
+            <h2 id="related-title">Читайте также</h2>
+            <div class="related__grid">
+                <a class="card" href="./article-photos.html">
+                    <span class="card__picture card__picture--blue"><img src="./images/mascot/painter.png" width="428" height="428" alt="Маскот иинфы рисует картину на мольберте" loading="lazy" /></span>
+                    <span class="card__meta">Дома и в быту · 5 мин</span>
+                    <h3>Раскрашиваем старые фото</h3>
+                </a>
+                <a class="card" href="./article-deepfake.html">
+                    <span class="card__picture card__picture--green"><img src="./images/mascot/phone.png" width="612" height="460" alt="Встревоженный маскот иинфы говорит по телефону" loading="lazy" /></span>
+                    <span class="card__meta">Безопасность · 6 мин</span>
+                    <h3>Голос мамы может быть подделкой</h3>
+                </a>
+                <a class="card" href="./article-first-chat.html">
+                    <span class="card__picture card__picture--blue"><img src="./images/mascot/painter.png" width="428" height="428" alt="Маскот иинфы рисует картину на мольберте" loading="lazy" /></span>
+                    <span class="card__meta">Дома и в быту · 5 мин</span>
+                    <h3>Первый разговор с&nbsp;чат-ботом</h3>
+                </a>
+            </div>
+            <img class="catalog__peek" src="./images/mascot/peek.png" width="400" height="186" alt="" loading="lazy" />
+        </section>
+
+            <section class="subscribe subscribe--light" id="subscribe" aria-labelledby="subscribe-title">
+                <h2 id="subscribe-title" class="subscribe__heading">Узнавай первым о&nbsp;новых технологиях</h2>
+                <div class="subscribe__middle">
+                    <form id="my-form" class="subscribe__form">
+                        <label class="field">
+                            <span>Как к вам обращаться</span>
+                            <input type="text" name="name" autocomplete="given-name" required data-fs-field />
+                            <span class="field__error" data-fs-error="name"></span>
+                        </label>
+                        <label class="field">
+                            <span>Почта</span>
+                            <input type="email" name="email" autocomplete="email" required data-fs-field />
+                            <span class="field__error" data-fs-error="email"></span>
+                        </label>
+                        <button class="button button--pink" type="submit" data-fs-submit-btn>Подписаться</button>
+                    </form>
+                    <p class="subscribe__note">Новый разбор, один полезный запрос и&nbsp;честные новости. Отписаться можно в&nbsp;один клик.</p>
+                    <p class="subscribe__status" data-fs-success>Готово! Первое письмо придёт в&nbsp;ближайший понедельник.</p>
+                    <p class="subscribe__status" data-fs-error>Не получилось отправить. Попробуйте ещё раз.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__top">
+                <div class="footer__nav">
+                    <a class="logo logo--light" href="./index.html"><img src="./images/logo-black.svg" width="2820" height="723" alt="иинфа, на главную" loading="lazy" /></a>
+                    <ul class="footer__menu">
+                        <li><a href="./index.html">Главная</a></li>
+                        <li><a href="./articles.html">Статьи</a></li>
+                        <li><a href="./glossary.html">Глоссарий</a></li>
+                        <li><a href="./about.html">О сайте</a></li>
+                        <li><a href="#subscribe">Рассылка</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contacts">
+                    <h2>Написать нам</h2>
+                    <p><a href="mailto:packfordesigners@gmail.com">packfordesigners@gmail.com</a></p>
+                    <ul class="footer__social">
+                        <li><a href="#" aria-label="иинфа в Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/></svg></a></li>
+                        <li><a href="#" aria-label="иинфа в Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.6 0 1.9l4.6 1.6 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.5 4.7 3.5c.7.5 1.6.1 1.8-.7l3.1-15.2c.2-1-.8-1.8-1.8-1.3Z" fill="currentColor"/><path d="m9.2 14.6 8.6-7.4" stroke="#EDE4E0" stroke-width="1.6" stroke-linecap="round"/></svg></a></li>
+                    </ul>
+                </div>
+                <img class="footer__mascot" src="./images/mascot/lamp.png" width="782" height="817" alt="Маскот иинфы включает лампочку" loading="lazy" />
+            </div>
+            <img class="footer__wordmark" src="./images/logo-beige.svg" width="2820" height="723" alt="" loading="lazy" />
+        </footer>
+
+        <script>
+            window.formspree =
+            window.formspree ||
+            function () {
+                (formspree.q = formspree.q || []).push(arguments);
+            };
+            formspree("initForm", {
+                formElement: "#my-form",
+                formId: "meaezwjq",
+            });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    </body>
+</html>

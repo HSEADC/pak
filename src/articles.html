@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Статьи · иинфа</title>
+        <meta name="description" content="Все статьи иинфы: разборы нейросетей для работы, дома и безопасности, понятным языком." />
+        <link rel="preload" href="./fonts/RFDewiCondensed-Black.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="preload" href="./fonts/TTNeoris-Regular.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="stylesheet" href="./stylesheets/main.css" />
+        <script>document.documentElement.classList.add('js')</script>
+    </head>
+    <body id="top">
+        <header class="hero hero--page hero--green">
+            <nav class="nav" aria-label="Основное меню">
+                <a class="logo" href="./index.html"><img src="./images/logo-white.svg" width="2820" height="723" alt="иинфа, на главную" /></a>
+                <div class="nav__links">
+                    <a class="nav__link" href="./index.html">Главная</a>
+                    <a class="nav__link nav__link--active" href="./articles.html" aria-current="page">Статьи</a>
+                    <a class="nav__link" href="./glossary.html">Глоссарий</a>
+                    <a class="nav__link" href="./about.html">О сайте</a>
+                </div>
+            </nav>
+
+            <div class="hero__grid">
+                <img class="hero__mascot hero__mascot--top" src="./images/mascot/graduate.webp" width="1088" height="1088" alt="Маскот иинфы в шапочке выпускника с дипломом" fetchpriority="high" />
+                <h1 class="hero__title">Все статьи</h1>
+                <div class="hero__foot">
+                    <p class="hero__lead">Разбираем нейросети по&nbsp;шагам: от&nbsp;первого вопроса чат-боту до&nbsp;привычки, которая экономит часы.</p>
+                    <a class="button" href="#subscribe">Подписаться на рассылку</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="catalog" aria-labelledby="filter-title">
+                <div class="filters">
+                    <h2 id="filter-title" class="filters__title">Фильтр</h2>
+                    <div class="filters__list" role="group" aria-labelledby="filter-title">
+                        <button class="filter" type="button" aria-pressed="false" data-filter="В работе">В работе</button>
+                        <button class="filter" type="button" aria-pressed="false" data-filter="Дома и в быту">Дома и в быту</button>
+                        <button class="filter" type="button" aria-pressed="false" data-filter="Безопасность">Безопасность</button>
+                        <button class="filter" type="button" aria-pressed="false" data-filter="Обзоры">Обзоры</button>
+                    </div>
+                </div>
+
+                <div class="news__grid">
+                    <a class="card card--big" href="./article-letter.html" data-rubric="В работе">
+                        <span class="card__picture card__picture--pink"><img src="./images/mascot/letter.png" width="906" height="758" alt="Маскот иинфы пишет письмо ручкой" loading="lazy" /></span>
+                        <span class="card__meta">В работе · 6 мин</span>
+                        <h3>Письмо начальству за&nbsp;две минуты</h3>
+                    </a>
+                    <a class="card card--wide" href="./article-garden.html" data-rubric="Дома и в быту">
+                        <span class="card__picture card__picture--blue"><img src="./images/mascot/garden.png" width="460" height="460" alt="Маскот иинфы в садовом фартуке с лопаткой" loading="lazy" /></span>
+                        <span class="card__meta">Дома и в быту · 4 мин</span>
+                        <h3>ИИ на даче: рассада, грядки и&nbsp;вредители</h3>
+                    </a>
+                    <a class="card" href="./article-photos.html" data-rubric="Дома и в быту">
+                        <span class="card__picture card__picture--blue"><img src="./images/mascot/painter.png" width="428" height="428" alt="Маскот иинфы рисует картину на мольберте" loading="lazy" /></span>
+                        <span class="card__meta">Дома и в быту · 5 мин</span>
+                        <h3>Раскрашиваем старые фото</h3>
+                    </a>
+                    <a class="card" href="./article-deepfake.html" data-rubric="Безопасность">
+                        <span class="card__picture card__picture--green"><img src="./images/mascot/phone.png" width="612" height="460" alt="Встревоженный маскот иинфы говорит по телефону" loading="lazy" /></span>
+                        <span class="card__meta">Безопасность · 6 мин</span>
+                        <h3>Голос мамы может быть подделкой</h3>
+                    </a>
+                </div>
+                <div class="news__grid news__grid--mirror">
+                    <a class="card" href="./article-first-chat.html" data-rubric="Дома и в быту">
+                        <span class="card__picture card__picture--blue"><img src="./images/mascot/painter.png" width="428" height="428" alt="Маскот иинфы рисует картину на мольберте" loading="lazy" /></span>
+                        <span class="card__meta">Дома и в быту · 5 мин</span>
+                        <h3>Первый разговор с&nbsp;чат-ботом</h3>
+                    </a>
+                    <a class="card" href="./article-deepfake.html" data-rubric="Безопасность">
+                        <span class="card__picture card__picture--green"><img src="./images/mascot/phone.png" width="612" height="460" alt="Встревоженный маскот иинфы говорит по телефону" loading="lazy" /></span>
+                        <span class="card__meta">Безопасность · 6 мин</span>
+                        <h3>Голос мамы может быть подделкой</h3>
+                    </a>
+                    <a class="card card--big" href="./article-paid.html" data-rubric="Обзоры">
+                        <span class="card__picture card__picture--grey"><img src="./images/mascot/money.webp" width="1190" height="1190" alt="Маскот иинфы сидит на горе денег и монет" loading="lazy" /></span>
+                        <span class="card__meta">Обзоры · 9 мин</span>
+                        <h3>Платить за&nbsp;нейросеть или хватит бесплатной</h3>
+                    </a>
+                    <a class="card card--wide" href="./article-prompt.html" data-rubric="Навык">
+                        <span class="card__picture card__picture--yellow"><img src="./images/mascot/painter.png" width="428" height="428" alt="Маскот иинфы рисует картину на мольберте" loading="lazy" /></span>
+                        <span class="card__meta">Навык · 6 мин</span>
+                        <h3>Как написать промпт, чтобы ответ был полезным</h3>
+                    </a>
+                </div>
+                <p class="catalog__empty" hidden>В этой рубрике пока нет статей. Загляните через неделю.</p>
+                <img class="catalog__peek" src="./images/mascot/peek.png" width="400" height="186" alt="" loading="lazy" />
+            </section>
+
+            <section class="subscribe subscribe--light" id="subscribe" aria-labelledby="subscribe-title">
+                <h2 id="subscribe-title" class="subscribe__heading">Узнавай первым о&nbsp;новых технологиях</h2>
+                <div class="subscribe__middle">
+                    <form id="my-form" class="subscribe__form">
+                        <label class="field">
+                            <span>Как к вам обращаться</span>
+                            <input type="text" name="name" autocomplete="given-name" required data-fs-field />
+                            <span class="field__error" data-fs-error="name"></span>
+                        </label>
+                        <label class="field">
+                            <span>Почта</span>
+                            <input type="email" name="email" autocomplete="email" required data-fs-field />
+                            <span class="field__error" data-fs-error="email"></span>
+                        </label>
+                        <button class="button button--pink" type="submit" data-fs-submit-btn>Подписаться</button>
+                    </form>
+                    <p class="subscribe__note">Новый разбор, один полезный запрос и&nbsp;честные новости. Отписаться можно в&nbsp;один клик.</p>
+                    <p class="subscribe__status" data-fs-success>Готово! Первое письмо придёт в&nbsp;ближайший понедельник.</p>
+                    <p class="subscribe__status" data-fs-error>Не получилось отправить. Попробуйте ещё раз.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__top">
+                <div class="footer__nav">
+                    <a class="logo logo--light" href="./index.html"><img src="./images/logo-black.svg" width="2820" height="723" alt="иинфа, на главную" loading="lazy" /></a>
+                    <ul class="footer__menu">
+                        <li><a href="./index.html">Главная</a></li>
+                        <li><a href="./articles.html">Статьи</a></li>
+                        <li><a href="./glossary.html">Глоссарий</a></li>
+                        <li><a href="./about.html">О сайте</a></li>
+                        <li><a href="#subscribe">Рассылка</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contacts">
+                    <h2>Написать нам</h2>
+                    <p><a href="mailto:packfordesigners@gmail.com">packfordesigners@gmail.com</a></p>
+                    <ul class="footer__social">
+                        <li><a href="#" aria-label="иинфа в Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/></svg></a></li>
+                        <li><a href="#" aria-label="иинфа в Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.6 0 1.9l4.6 1.6 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.5 4.7 3.5c.7.5 1.6.1 1.8-.7l3.1-15.2c.2-1-.8-1.8-1.8-1.3Z" fill="currentColor"/><path d="m9.2 14.6 8.6-7.4" stroke="#EDE4E0" stroke-width="1.6" stroke-linecap="round"/></svg></a></li>
+                    </ul>
+                </div>
+                <img class="footer__mascot" src="./images/mascot/lamp.png" width="782" height="817" alt="Маскот иинфы включает лампочку" loading="lazy" />
+            </div>
+            <img class="footer__wordmark" src="./images/logo-beige.svg" width="2820" height="723" alt="" loading="lazy" />
+        </footer>
+
+        <script>
+            window.formspree =
+            window.formspree ||
+            function () {
+                (formspree.q = formspree.q || []).push(arguments);
+            };
+            formspree("initForm", {
+                formElement: "#my-form",
+                formId: "meaezwjq",
+            });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    </body>
+</html>
