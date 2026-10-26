@@ -73,6 +73,18 @@ const pages = {
       '/scripts/index.js'
     ]
   },
+  articleMeeting: {
+    file: 'article-meeting.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
+  },
+  quizBasics: {
+    file: 'quiz-basics.html',
+    chunks: [
+      '/scripts/index.js'
+    ]
+  },
   notFound: {
     file: '404.html',
     chunks: [

@@ -219,9 +219,11 @@ a {
     transition: transform 200ms var(--ease-out);
 }
 
+/* надпись в плашке оптически сидит высоко, опускаем чуть ниже центра */
 .logo img {
     width: auto;
     height: 24px;
+    transform: translateY(8%);
 }
 
 .logo:hover {
@@ -244,7 +246,7 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: var(--gap);
-    padding: var(--margin) var(--margin) 0;
+    padding: clamp(16px, 2.5vw, 40px) var(--margin) 0;
 }
 
 .nav__links {
@@ -487,11 +489,15 @@ a {
     transform: scale(1.04) rotate(-2deg);
 }
 
-.card__picture--pink { background: var(--pink); }
-.card__picture--blue { background: var(--blue); }
-.card__picture--green { background: var(--green); }
-.card__picture--yellow { background: #ffe14a; }
-.card__picture--grey { background: #5c5c5c; }
+/* градиент сверху вниз, как фон в самих картинках; те же фоны у карточек квизов */
+.card__picture--pink,
+.quiz__picture--pink { background: linear-gradient(to bottom, #f7c0d3, var(--pink)); }
+.card__picture--blue,
+.quiz__picture--blue { background: linear-gradient(to bottom, #8fbde0, var(--blue)); }
+.card__picture--green,
+.quiz__picture--green { background: linear-gradient(to bottom, #e1eba4, var(--green)); }
+.card__picture--yellow { background: linear-gradient(to bottom, #fff2a6, #ffe14a); }
+.card__picture--grey { background: linear-gradient(to bottom, #a3a3a3, #3f3f3f); }
 
 .card:hover .card__picture {
     transform: scale(1.015);
@@ -590,8 +596,16 @@ html:not(.js) .filters {
     grid-row: 1;
     justify-self: center;
     align-self: start;
-    width: clamp(220px, 26vw, 380px);
+    width: clamp(240px, 40vw, 640px);
     margin: 0;
+    -webkit-mask-image: linear-gradient(to bottom, #000 var(--fade-from, 62%), transparent var(--fade-to, 92%));
+    mask-image: linear-gradient(to bottom, #000 var(--fade-from, 62%), transparent var(--fade-to, 92%));
+}
+
+/* у этих картинок ноги выше края, поэтому растворяем раньше */
+.hero__mascot--fade-high {
+    --fade-from: 45%;
+    --fade-to: 80%;
 }
 
 .hero__grid:has(.hero__mascot--top) .hero__title {
@@ -798,18 +812,24 @@ html:not(.js) .filters {
 }
 
 .member__photo {
-    display: grid;
-    place-items: center;
+    display: block;
     width: min(100%, 280px);
     aspect-ratio: 1;
     border-radius: 50%;
-    font: 900 clamp(64px, 7vw, 112px) / 1 var(--font-display);
-    color: var(--white);
+    overflow: hidden;
 }
 
-.member__photo--green { background: radial-gradient(circle at 30% 30%, #e7f0b3, var(--green)); }
-.member__photo--pink { background: radial-gradient(circle at 30% 30%, #ffd6e4, var(--pink)); }
-.member__photo--blue { background: radial-gradient(circle at 30% 30%, #b6dcf2, var(--blue)); }
+/* фото вписано по ширине и прижато к низу, плечи обрезает круг */
+.member__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+.member__photo--green { background: linear-gradient(90deg, #dfe6a4, #e6d6b8); }
+.member__photo--pink { background: linear-gradient(90deg, #f2b9c8, #d8bcd4); }
+.member__photo--blue { background: linear-gradient(90deg, #bcc6de, #a8cae4); }
 
 .member h3 {
     font-size: clamp(32px, 3vw, 44px);
@@ -831,14 +851,17 @@ html:not(.js) .filters {
     white-space: nowrap;
 }
 
+/* 404 всегда в один экран: цифра лежит фоном на всю ширину, сжимается только маскот */
 .notfound {
-    height: auto;
-    min-height: 100svh;
-    padding-bottom: 64px;
+    height: 100svh;
+    min-height: 0;
+    padding-bottom: clamp(16px, 4svh, 48px);
 }
 
 .notfound__stage {
     position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
     display: grid;
     place-items: end center;
     margin-top: -40px;
@@ -846,8 +869,11 @@ html:not(.js) .filters {
 }
 
 .notfound__code {
-    grid-area: 1 / 1;
-    font: 900 clamp(200px, 52vw, 860px) / 0.8 var(--font-display);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    font: 900 60vw / 0.8 var(--font-display);
     letter-spacing: -0.02em;
     margin-right: -0.02em;
     color: var(--pink);
@@ -860,7 +886,7 @@ html:not(.js) .filters {
 .notfound__mascot {
     grid-area: 1 / 1;
     position: relative;
-    width: clamp(220px, 30vw, 440px);
+    width: min(34vw, 52svh);
     -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 92%);
     mask-image: linear-gradient(to bottom, #000 62%, transparent 92%);
 }
@@ -881,9 +907,10 @@ html:not(.js) .filters {
 }
 
 .notfound__content {
+    flex-shrink: 0;
     display: grid;
     justify-items: center;
-    gap: 20px;
+    gap: clamp(12px, 2svh, 20px);
     margin-top: -24px;
     padding: 0 var(--margin);
     text-align: center;
@@ -923,6 +950,23 @@ html:not(.js) .filters {
 .notfound__home {
     margin-top: 8px;
     font-size: 16px;
+}
+
+/* на совсем низких экранах форма важнее картинки */
+@media (max-height: 480px) {
+    .notfound {
+        height: auto;
+        min-height: 100svh;
+    }
+
+    .notfound__stage {
+        display: none;
+    }
+
+    .notfound__content {
+        margin: auto 0;
+        padding-top: 24px;
+    }
 }
 
 /* страница статьи */
@@ -1087,11 +1131,21 @@ html:not(.js) .filters {
 }
 
 .quiz__picture {
+    position: relative;
     display: block;
+    overflow: hidden;
     aspect-ratio: 16 / 9;
     margin-bottom: 8px;
     border-radius: 20px;
-    background: var(--beige);
+}
+
+.quiz__picture img {
+    position: absolute;
+    top: 6%;
+    left: 0;
+    width: 100%;
+    height: 88%;
+    object-fit: contain;
 }
 
 .quiz p {
@@ -1106,6 +1160,154 @@ html:not(.js) .filters {
 .quizzes__more {
     justify-self: center;
     min-width: min(100%, 340px);
+}
+
+/* страница квиза */
+
+.test {
+    position: relative;
+    padding: 64px var(--margin) var(--section);
+}
+
+.test__inner {
+    display: grid;
+    gap: 32px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.test__progress {
+    display: grid;
+    gap: 12px;
+}
+
+.test__count {
+    font-size: 16px;
+    color: #6b6461;
+}
+
+.test__bar {
+    display: block;
+    height: 6px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--beige);
+}
+
+.test__bar > span {
+    display: block;
+    width: 10%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--orange);
+    transition: width 300ms var(--ease-out);
+}
+
+html:not(.js) .test__progress {
+    display: none;
+}
+
+.question {
+    display: grid;
+    gap: 24px;
+}
+
+.question__title {
+    font-size: clamp(28px, 3vw, 44px);
+    line-height: 1.05;
+}
+
+.question__title:focus,
+.test__level:focus {
+    outline: none;
+}
+
+.question__options {
+    display: grid;
+    gap: 8px;
+}
+
+.option {
+    min-height: 64px;
+    padding: 16px 24px;
+    border: 0;
+    border-radius: 20px;
+    background: var(--beige);
+    color: var(--black);
+    font: 500 var(--size-body) / 1.35 var(--font-text);
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 200ms, opacity 200ms, transform 200ms var(--ease-out);
+}
+
+.option:hover:not(:disabled) {
+    background: #e2d5cf;
+}
+
+.option:active:not(:disabled) {
+    transform: scale(0.99);
+}
+
+.option:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 2px;
+}
+
+.option:disabled {
+    cursor: default;
+}
+
+.option.is-correct {
+    background: var(--green);
+}
+
+.option.is-wrong {
+    background: var(--pink);
+}
+
+.option:disabled:not(.is-correct, .is-wrong) {
+    opacity: 0.5;
+}
+
+.question__note {
+    font-size: var(--size-body);
+}
+
+.test__next {
+    justify-self: start;
+    min-width: 220px;
+}
+
+.test__result {
+    display: grid;
+    justify-items: start;
+    gap: 16px;
+}
+
+.test__score {
+    font: 900 clamp(72px, 10vw, 140px) / 0.9 var(--font-display);
+    color: var(--orange);
+}
+
+.test__level {
+    font-size: var(--size-h2);
+    line-height: 0.95;
+}
+
+.test__text {
+    max-width: 52ch;
+    font-size: 20px;
+}
+
+.test__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+:is(.question, .test__progress, .test__result, .test__next)[hidden] {
+    display: none;
 }
 
 /* главная: главный разбор недели */
@@ -1759,7 +1961,7 @@ html:not(.js) .filters {
     font-size: 16px;
 }
 
-/* подписка, светлый вариант для главной */
+/* подписка, светлый вариант: белый с чертой сверху */
 
 .subscribe--light {
     display: grid;
@@ -1768,7 +1970,8 @@ html:not(.js) .filters {
     gap: 32px;
     min-height: 0;
     padding: 96px var(--margin);
-    background: #ffe2ec;
+    border-top: 2px solid var(--black);
+    background: var(--white);
     color: var(--black);
 }
 
@@ -1791,6 +1994,10 @@ html:not(.js) .filters {
 .subscribe--light .field input:hover,
 .subscribe--light .field input:focus {
     border-color: var(--black);
+}
+
+.subscribe--light .field input::placeholder {
+    color: #8a8a8a;
 }
 
 /* подвал */
@@ -2150,9 +2357,10 @@ html:not(.js) .filters {
     }
 
     .hero__mascot {
-        align-self: start;
-        width: 44vw;
-        margin-top: 4svh;
+        grid-column: 1 / -1;
+        justify-self: center;
+        align-self: center;
+        width: min(64vw, 340px);
     }
 
     .hero__foot {
@@ -2359,7 +2567,11 @@ html:not(.js) .filters {
     }
 
     .notfound__stage {
-        margin-top: 24px;
+        margin-top: 0;
+    }
+
+    .notfound__mascot {
+        width: min(60vw, 30svh);
     }
 
     .story__row > p,
@@ -2415,6 +2627,11 @@ html:not(.js) .filters {
     .subscribe {
         min-height: 0;
         gap: 0;
+    }
+
+    /* у светлой подписки заголовок отдельно от формы, отступ нужен */
+    .subscribe--light {
+        gap: 28px;
     }
 
     .subscribe__title span {

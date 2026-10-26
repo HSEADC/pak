@@ -23,7 +23,7 @@
             </nav>
 
             <div class="hero__grid">
-                <img class="hero__mascot hero__mascot--top" src="./images/mascot/magnifier.webp" width="1176" height="1176" alt="Маскот иинфы разглядывает что-то через лупу" fetchpriority="high" />
+                <img class="hero__mascot hero__mascot--top hero__mascot--fade-high" src="./images/mascot/magnifier.webp" width="1176" height="1176" alt="Маскот иинфы разглядывает что-то через лупу" fetchpriority="high" />
                 <h1 class="hero__title">Глоссарий</h1>
                 <div class="hero__foot">
                     <p class="hero__lead">Все термины, которые пригодятся при&nbsp;работе с&nbsp;ИИ.</p>
@@ -83,7 +83,7 @@
                             <summary>Дообучение</summary>
                             <p>Когда готовую модель доучивают на&nbsp;своих данных, например на&nbsp;документах компании, чтобы она лучше отвечала по&nbsp;конкретной теме.</p>
                         </details>
-                        <details data-tags="Узкопрофильные" open>
+                        <details data-tags="Узкопрофильные">
                             <summary>Машинное обучение</summary>
                             <p>Способ создавать ИИ, который учится на&nbsp;данных: находит закономерности и&nbsp;использует их, чтобы делать прогнозы и&nbsp;решать задачи без готовых правил для каждого случая.</p>
                         </details>
@@ -91,13 +91,45 @@
                             <summary>Искусственный интеллект</summary>
                             <p>Общее название для программ, которые выполняют задачи, раньше доступные только людям. Нейросети стали самой заметной его частью.</p>
                         </details>
+                        <details data-tags="Безопасность">
+                            <summary>Фишинг</summary>
+                            <p>Поддельные письма и&nbsp;сайты, которые выманивают пароли и&nbsp;данные карты. С&nbsp;нейросетями такие письма стали грамотнее, поэтому проверяйте адрес отправителя и&nbsp;ссылку.</p>
+                        </details>
+                        <details data-tags="Безопасность|Узкопрофильные">
+                            <summary>Клонирование голоса</summary>
+                            <p>Подделка голоса по&nbsp;короткой записи. Мошенникам хватает нескольких секунд из&nbsp;голосового сообщения или видео.</p>
+                        </details>
+                        <details data-tags="Безопасность|Бизнес">
+                            <summary>Утечка данных</summary>
+                            <p>Когда личная или рабочая информация попадает к&nbsp;посторонним. Не&nbsp;вставляйте в&nbsp;чат-бот паспортные данные, пароли и&nbsp;секретные документы.</p>
+                        </details>
+                        <details data-tags="Безопасность|Программирование">
+                            <summary>Промпт-инъекция</summary>
+                            <p>Скрытая команда в&nbsp;тексте, письме или на&nbsp;сайте, которая заставляет нейросеть сделать не&nbsp;то, что просили вы.</p>
+                        </details>
+                        <details data-tags="Безопасность|Бизнес">
+                            <summary>Модерация</summary>
+                            <p>Фильтры, которые не&nbsp;дают нейросети отвечать на&nbsp;опасные запросы и&nbsp;выдавать вредный контент.</p>
+                        </details>
+                        <details data-tags="Безопасность|Дома и в быту">
+                            <summary>Цифровой след</summary>
+                            <p>Всё, что вы оставляете в&nbsp;интернете: фото, комментарии, голосовые. Из&nbsp;этого можно собрать дипфейк, так что публикуйте с&nbsp;осторожностью.</p>
+                        </details>
+                        <details data-tags="Безопасность|Узкопрофильные">
+                            <summary>Водяной знак</summary>
+                            <p>Невидимая метка в&nbsp;картинке или тексте, по&nbsp;которой можно понять, что их создала нейросеть.</p>
+                        </details>
+                        <details data-tags="Безопасность|Программирование">
+                            <summary>Джейлбрейк</summary>
+                            <p>Попытка хитрым запросом обойти запреты нейросети. Разработчики постоянно закрывают такие лазейки.</p>
+                        </details>
                     </div>
                     <div class="terms__column">
                         <details data-tags="Дома и в быту|В работе">
                             <summary>Чат-бот</summary>
                             <p>Окно переписки с&nbsp;нейросетью. Выглядит как мессенджер: вы пишете, она отвечает.</p>
                         </details>
-                        <details data-tags="Дома и в быту" open>
+                        <details data-tags="Дома и в быту">
                             <summary>Нейросеть</summary>
                             <p>Программа, которая научилась на&nbsp;огромном количестве примеров: текстов, картинок, записей речи. Она не&nbsp;думает как человек, а&nbsp;угадывает самый подходящий ответ.</p>
                         </details>
@@ -133,6 +165,42 @@
                             <summary>Модель</summary>
                             <p>Конкретная нейросеть со&nbsp;своим именем и&nbsp;версией: GPT, GigaChat, Claude. Как марки автомобилей: делают одно, но&nbsp;каждая по-своему.</p>
                         </details>
+                        <details data-tags="В работе">
+                            <summary>Саммари</summary>
+                            <p>Краткий пересказ длинного текста: письма, отчёта, записи встречи. Одна из&nbsp;самых полезных задач для нейросети в&nbsp;офисе.</p>
+                        </details>
+                        <details data-tags="В работе|Бизнес">
+                            <summary>Шаблон промпта</summary>
+                            <p>Заготовка запроса, в&nbsp;которую вы подставляете свои данные. Экономит время на&nbsp;повторяющихся задачах.</p>
+                        </details>
+                        <details data-tags="В работе|Программирование">
+                            <summary>Копилот</summary>
+                            <p>Помощник на&nbsp;основе нейросети, встроенный в&nbsp;привычную программу: почту, таблицы, редактор кода.</p>
+                        </details>
+                        <details data-tags="Узкопрофильные|Программирование">
+                            <summary>Параметры модели</summary>
+                            <p>Внутренние настройки нейросети, которые подбираются при обучении. Их бывают миллиарды, и&nbsp;по&nbsp;их числу судят о&nbsp;размере модели.</p>
+                        </details>
+                        <details data-tags="Узкопрофильные">
+                            <summary>Диффузионная модель</summary>
+                            <p>Нейросеть, которая рисует картинку из&nbsp;шума, шаг за&nbsp;шагом убирая лишнее. Так работают Midjourney и&nbsp;Kandinsky.</p>
+                        </details>
+                        <details data-tags="Узкопрофильные|Бизнес">
+                            <summary>Бенчмарк</summary>
+                            <p>Набор заданий, по&nbsp;которому сравнивают нейросети между собой. Что-то вроде экзамена для моделей.</p>
+                        </details>
+                        <details data-tags="Узкопрофильные|Дома и в быту">
+                            <summary>Синтез речи</summary>
+                            <p>Превращение текста в&nbsp;голос. Так читают вслух навигаторы и&nbsp;голосовые помощники.</p>
+                        </details>
+                        <details data-tags="Бизнес|Программирование">
+                            <summary>API</summary>
+                            <p>Способ подключить нейросеть к&nbsp;своему сайту или приложению. Через него компании встраивают ИИ в&nbsp;свои сервисы.</p>
+                        </details>
+                        <details data-tags="Бизнес|В работе">
+                            <summary>Автоматизация</summary>
+                            <p>Когда рутину, например ответы на&nbsp;типовые вопросы клиентов, берёт на&nbsp;себя программа, а&nbsp;люди занимаются сложными задачами.</p>
+                        </details>
                     </div>
                 </div>
                 <img class="catalog__peek" src="./images/mascot/peek.png" width="400" height="186" alt="" loading="lazy" />
@@ -143,13 +211,13 @@
                 <div class="subscribe__middle">
                     <form id="my-form" class="subscribe__form">
                         <label class="field">
-                            <span>Как к вам обращаться</span>
-                            <input type="text" name="name" autocomplete="given-name" required data-fs-field />
+                            <span class="visually-hidden">Как к вам обращаться</span>
+                            <input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="given-name" required data-fs-field />
                             <span class="field__error" data-fs-error="name"></span>
                         </label>
                         <label class="field">
-                            <span>Почта</span>
-                            <input type="email" name="email" autocomplete="email" required data-fs-field />
+                            <span class="visually-hidden">Почта</span>
+                            <input type="email" name="email" placeholder="Почта" autocomplete="email" required data-fs-field />
                             <span class="field__error" data-fs-error="email"></span>
                         </label>
                         <button class="button button--pink" type="submit" data-fs-submit-btn>Подписаться</button>
@@ -177,8 +245,8 @@
                     <h2>Написать нам</h2>
                     <p><a href="mailto:packfordesigners@gmail.com">packfordesigners@gmail.com</a></p>
                     <ul class="footer__social">
-                        <li><a href="#" aria-label="иинфа в Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/></svg></a></li>
-                        <li><a href="#" aria-label="иинфа в Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.6 0 1.9l4.6 1.6 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.5 4.7 3.5c.7.5 1.6.1 1.8-.7l3.1-15.2c.2-1-.8-1.8-1.8-1.3Z" fill="currentColor"/><path d="m9.2 14.6 8.6-7.4" stroke="#EDE4E0" stroke-width="1.6" stroke-linecap="round"/></svg></a></li>
+                        <li><a href="./404.html" aria-label="иинфа в Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/></svg></a></li>
+                        <li><a href="./404.html" aria-label="иинфа в Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.6 0 1.9l4.6 1.6 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.5 4.7 3.5c.7.5 1.6.1 1.8-.7l3.1-15.2c.2-1-.8-1.8-1.8-1.3Z" fill="currentColor"/><path d="m9.2 14.6 8.6-7.4" stroke="#EDE4E0" stroke-width="1.6" stroke-linecap="round"/></svg></a></li>
                     </ul>
                 </div>
                 <img class="footer__mascot" src="./images/mascot/lamp.png" width="782" height="817" alt="Маскот иинфы включает лампочку" loading="lazy" />

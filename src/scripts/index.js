@@ -94,18 +94,115 @@ if (filters.length) {
 const termFilters = [...document.querySelectorAll('[data-term-filter]')]
 
 if (termFilters.length) {
+    const columns = [...document.querySelectorAll('.terms__column')]
     const terms = [...document.querySelectorAll('.terms details')]
+    const homes = new Map(terms.map((term) => [term, term.parentElement]))
 
     termFilters.forEach((button) => {
         button.addEventListener('click', () => {
             const active = button.getAttribute('aria-pressed') !== 'true'
             const tag = active ? button.dataset.termFilter : ''
             termFilters.forEach((other) => other.setAttribute('aria-pressed', String(active && other === button)))
+
+            // найденные термины раскладываем поровну по колонкам, без фильтра возвращаем на места
+            let shown = 0
             terms.forEach((term) => {
                 term.hidden = tag !== '' && !term.dataset.tags.split('|').includes(tag)
+                const column = tag === '' || term.hidden ? homes.get(term) : columns[shown++ % columns.length]
+                column.append(term)
             })
         })
     })
+}
+
+// Квиз: по одному вопросу, подсветка ответа с пояснением, в конце уровень
+const quiz = document.querySelector('[data-quiz]')
+
+if (quiz) {
+    const questions = [...quiz.querySelectorAll('.question')]
+    const step = quiz.querySelector('[data-quiz-step]')
+    const bar = quiz.querySelector('[data-quiz-bar]')
+    const next = quiz.querySelector('[data-quiz-next]')
+    const result = quiz.querySelector('[data-quiz-result]')
+    const progress = quiz.querySelector('.test__progress')
+    const levels = [
+        { min: 8, title: 'Вы про', text: 'Вы отлично разбираетесь в основах ИИ. Скоро выйдут квизы посложнее, подпишитесь на рассылку, чтобы не пропустить.' },
+        { min: 5, title: 'Уверенный пользователь', text: 'Основы вы знаете. Загляните в статьи, чтобы закрепить: там готовые запросы для работы и дома.' },
+        { min: 0, title: 'Пока нуб, но это поправимо', text: 'Начните с глоссария: там главные слова простыми словами. А статьи помогут попробовать нейросеть на настоящих задачах.' }
+    ]
+    let current = 0
+    let score = 0
+
+    const show = (index) => {
+        current = index
+        questions.forEach((question, i) => (question.hidden = i !== index))
+        step.textContent = index + 1
+        bar.style.width = `${((index + 1) / questions.length) * 100}%`
+        next.hidden = true
+        next.textContent = index === questions.length - 1 ? 'Узнать результат' : 'Дальше'
+    }
+
+    const reset = () => {
+        score = 0
+        questions.forEach((question) => {
+            question.querySelectorAll('.option').forEach((option) => {
+                option.disabled = false
+                option.classList.remove('is-correct', 'is-wrong')
+            })
+            question.querySelector('.question__verdict')?.remove()
+            question.querySelector('.question__note').hidden = true
+        })
+        result.hidden = true
+        progress.hidden = false
+        show(0)
+    }
+
+    questions.forEach((question) => {
+        const options = [...question.querySelectorAll('.option')]
+        const note = question.querySelector('.question__note')
+        options.forEach((option) => {
+            option.addEventListener('click', () => {
+                const right = option.hasAttribute('data-correct')
+                if (right) score++
+                options.forEach((other) => {
+                    other.disabled = true
+                    if (other.hasAttribute('data-correct')) other.classList.add('is-correct')
+                })
+                if (!right) option.classList.add('is-wrong')
+                const verdict = document.createElement('strong')
+                verdict.className = 'question__verdict'
+                verdict.textContent = right ? 'Верно! ' : 'Не совсем. '
+                note.prepend(verdict)
+                note.hidden = false
+                next.hidden = false
+                next.focus()
+            })
+        })
+    })
+
+    next.addEventListener('click', () => {
+        if (current < questions.length - 1) {
+            show(current + 1)
+            questions[current].querySelector('.question__title').focus()
+            return
+        }
+        const level = levels.find((item) => score >= item.min)
+        questions[current].hidden = true
+        next.hidden = true
+        progress.hidden = true
+        quiz.querySelector('[data-quiz-score]').textContent = score
+        quiz.querySelector('[data-quiz-level]').textContent = level.title
+        quiz.querySelector('[data-quiz-text]').textContent = level.text
+        result.hidden = false
+        quiz.querySelector('[data-quiz-level]').focus()
+    })
+
+    quiz.querySelector('[data-quiz-restart]').addEventListener('click', () => {
+        reset()
+        questions[0].querySelector('.question__title').focus()
+    })
+
+    reset()
 }
 
 // 404: глаза маскота следят за курсором
