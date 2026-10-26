@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Из записи совещания в список дел · иинфа</title>
+        <meta name="description" content="Как с помощью нейросети превратить расшифровку совещания в короткий итог и список задач с ответственными и сроками: пошагово и с готовыми запросами." />
+        <link rel="preload" href="./fonts/RFDewiCondensed-Black.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="preload" href="./fonts/TTNeoris-Regular.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="stylesheet" href="./stylesheets/main.css" />
+        <script>document.documentElement.classList.add('js')</script>
+    </head>
+    <body id="top">
+        <header class="hero hero--page">
+            <nav class="nav" aria-label="Основное меню">
+                <a class="logo" href="./index.html"><img src="./images/logo-white.svg" width="2820" height="723" alt="иинфа, на главную" /></a>
+                <div class="nav__links">
+                    <a class="nav__link" href="./index.html">Главная</a>
+                    <a class="nav__link nav__link--active" href="./articles.html">Статьи</a>
+                    <a class="nav__link" href="./glossary.html">Глоссарий</a>
+                    <a class="nav__link" href="./about.html">О сайте</a>
+                </div>
+            </nav>
+
+            <div class="hero__grid">
+                <img class="hero__mascot hero__mascot--top" src="./images/mascot/checklist.png" width="800" height="731" alt="Маскот иинфы отмечает задачи в чек-листе" fetchpriority="high" />
+                <h1 class="hero__title article__title">Из записи совещания в&nbsp;список дел</h1>
+                <div class="hero__foot">
+                    <p class="hero__lead">Час обсуждали, а&nbsp;что решили, никто толком не&nbsp;помнит? Нейросеть за&nbsp;минуту вытащит из&nbsp;расшифровки итоги, задачи и&nbsp;сроки.</p>
+                    <p class="article__meta"><a href="./articles.html">В работе</a> · 5 мин · 26 октября 2026</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="article">
+            <article class="article__body">
+                <p class="article__intro">После совещания у&nbsp;каждого остаётся своя версия того, о&nbsp;чём договорились. Кто-то записал половину, кто-то ничего, а&nbsp;через неделю выясняется, что задачу никто не&nbsp;взял. Нейросеть не&nbsp;заменит ведущего встречи, но&nbsp;отлично справится с&nbsp;самой скучной частью: прочитает расшифровку и&nbsp;соберёт короткий итог, который можно сразу разослать.</p>
+
+                <section id="record" aria-labelledby="record-title">
+                    <h2 id="record-title">Получите текст встречи</h2>
+                    <p>Нейросети нужен текст, а&nbsp;не&nbsp;звук. Многие сервисы видеосвязи умеют сами расшифровывать встречу: поищите в&nbsp;настройках пункт «Расшифровка» или «Транскрипция». Если встреча была вживую, запишите её на&nbsp;диктофон и&nbsp;загрузите файл в&nbsp;чат-бот, который понимает голос, или в&nbsp;любой сервис распознавания речи.</p>
+                    <p>Перед записью обязательно предупредите участников. Это вопрос не&nbsp;только вежливости, но&nbsp;и&nbsp;закона.</p>
+                </section>
+
+                <section id="summary" aria-labelledby="summary-title">
+                    <h2 id="summary-title">Попросите итог и&nbsp;задачи</h2>
+                    <p>Вставьте расшифровку в&nbsp;чат и&nbsp;объясните, что именно нужно получить. Если текст очень длинный, разбейте его на&nbsp;две-три части и&nbsp;отправляйте по&nbsp;очереди, а&nbsp;итог попросите в&nbsp;конце.</p>
+                    <div class="prompt prompt--inline">
+                        <h3>Запрос целиком</h3>
+                        <p class="prompt__text">Ниже расшифровка рабочего совещания. Составь короткий итог: 1) три-пять главных решений; 2) список задач в виде таблицы: задача, ответственный, срок; 3) вопросы, которые остались открытыми. Не придумывай то, чего нет в тексте: если срок или ответственный не названы, так и напиши «не назначен».</p>
+                        <p class="prompt__result"><strong>Что получите:</strong> итог на&nbsp;полстраницы и&nbsp;таблицу задач, которую можно вставить в&nbsp;письмо или общий чат.</p>
+                        <button class="button" type="button" data-copy>Скопировать запрос</button>
+                    </div>
+                </section>
+
+                <section id="check" aria-labelledby="check-title">
+                    <h2 id="check-title">Сверьте с&nbsp;тем, что было</h2>
+                    <p>Расшифровка часто путает имена, цифры и&nbsp;термины, а&nbsp;нейросеть может уверенно достроить то, чего никто не&nbsp;говорил. Пробегитесь глазами по&nbsp;таблице задач: на&nbsp;своих ли людях задачи и&nbsp;верные ли даты.</p>
+                    <ul class="article__phrases">
+                        <li>«Покажи, в&nbsp;каком месте расшифровки это сказано»</li>
+                        <li>«Раздели задачи по&nbsp;ответственным»</li>
+                        <li>«Отметь, где сроки не&nbsp;названы»</li>
+                        <li>«Сделай итог в&nbsp;три раза короче»</li>
+                    </ul>
+                    <aside class="callout">
+                        <h3>Важно</h3>
+                        <p>Не&nbsp;загружайте в&nbsp;публичный чат-бот записи с&nbsp;коммерческой тайной, персональными данными клиентов или зарплатами. Уточните, каким сервисом можно пользоваться в&nbsp;вашей компании, или замените чувствительное на&nbsp;условное: «клиент&nbsp;А», «сумма&nbsp;Х».</p>
+                    </aside>
+                </section>
+
+                <section id="send" aria-labelledby="send-title">
+                    <h2 id="send-title">Разошлите итог</h2>
+                    <p>Итог лучше отправить в&nbsp;тот&nbsp;же день, пока все помнят встречу. Попросите нейросеть превратить таблицу в&nbsp;письмо и&nbsp;добавьте его в&nbsp;календарь или трекер задач.</p>
+                    <div class="article__prompts">
+                    <div class="prompt prompt--inline">
+                        <h3>Письмо участникам</h3>
+                        <p class="prompt__text">Преврати этот итог в короткое письмо участникам совещания. Начни с главного решения, затем список задач с ответственными и сроками. В конце попроси написать до завтра, если что-то записано неверно. Тон деловой и дружелюбный.</p>
+                        <p class="prompt__result"><strong>Что получите:</strong> письмо, которое прочитают до&nbsp;конца, потому что всё важное в&nbsp;первых строках.</p>
+                        <button class="button" type="button" data-copy>Скопировать запрос</button>
+                    </div>
+                    <div class="prompt prompt--inline">
+                        <h3>Повестка следующей встречи</h3>
+                        <p class="prompt__text">На основе открытых вопросов из итога составь повестку следующей встречи на 30 минут: темы, порядок и примерное время на каждую.</p>
+                        <p class="prompt__result"><strong>Что получите:</strong> готовый план, чтобы следующая встреча была короче этой.</p>
+                        <button class="button" type="button" data-copy>Скопировать запрос</button>
+                    </div>
+                    <div class="prompt prompt--inline">
+                        <h3>Голосовое в&nbsp;задачи</h3>
+                        <p class="prompt__text">Это расшифровка моего голосового сообщения с идеями на неделю. Разбери её на отдельные задачи, убери повторы и отсортируй по срочности.</p>
+                        <p class="prompt__result"><strong>Что получите:</strong> аккуратный список дел вместо потока мыслей.</p>
+                        <button class="button" type="button" data-copy>Скопировать запрос</button>
+                    </div>
+                    </div>
+                </section>
+
+                <p class="article__outro">Попробуйте на&nbsp;ближайшей планёрке: первый итог займёт десять минут, а&nbsp;со&nbsp;второго раза хватит двух. А&nbsp;если запросы пока даются с&nbsp;трудом, загляните в&nbsp;статью <a href="./article-prompt.html">«Как написать промпт, чтобы ответ был полезным»</a>.</p>
+            </article>
+
+            <aside class="article__aside" aria-label="Содержание статьи">
+                <h2>Содержание</h2>
+                <ul>
+                    <li><a href="#record">Получите текст встречи</a></li>
+                    <li><a href="#summary">Попросите итог и&nbsp;задачи</a></li>
+                    <li><a href="#check">Сверьте с&nbsp;тем, что было</a></li>
+                    <li><a href="#send">Разошлите итог</a></li>
+                </ul>
+                <a class="button" href="#subscribe">Подписаться на рассылку</a>
+            </aside>
+            </div>
+
+        <section class="related" aria-labelledby="related-title">
+            <h2 id="related-title">Читайте также</h2>
+            <div class="related__grid">
+                <a class="card" href="./article-letter.html">
+                    <span class="card__picture card__picture--pink"><img src="./images/mascot/letter.png" width="906" height="758" alt="Маскот иинфы пишет письмо ручкой" loading="lazy" /></span>
+                    <span class="card__meta">В работе · 6 мин</span>
+                    <h3>Письмо начальству за&nbsp;две минуты</h3>
+                </a>
+                <a class="card" href="./article-prompt.html">
+                    <span class="card__picture card__picture--yellow"><img src="./images/mascot/painter.png" width="428" height="428" alt="Маскот иинфы рисует картину на мольберте" loading="lazy" /></span>
+                    <span class="card__meta">Навык · 6 мин</span>
+                    <h3>Как написать промпт, чтобы ответ был полезным</h3>
+                </a>
+                <a class="card" href="./article-first-chat.html">
+                    <span class="card__picture card__picture--blue"><img src="./images/mascot/chat.png" width="900" height="600" alt="Маскот иинфы задаёт вопрос роботу-чат-боту" loading="lazy" /></span>
+                    <span class="card__meta">Дома и в быту · 5 мин</span>
+                    <h3>Первый разговор с&nbsp;чат-ботом</h3>
+                </a>
+            </div>
+            <img class="catalog__peek" src="./images/mascot/peek.png" width="400" height="186" alt="" loading="lazy" />
+        </section>
+
+            <section class="subscribe subscribe--light" id="subscribe" aria-labelledby="subscribe-title">
+                <h2 id="subscribe-title" class="subscribe__heading">Узнавай первым о&nbsp;новых технологиях</h2>
+                <div class="subscribe__middle">
+                    <form id="my-form" class="subscribe__form">
+                        <label class="field">
+                            <span class="visually-hidden">Как к вам обращаться</span>
+                            <input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="given-name" required data-fs-field />
+                            <span class="field__error" data-fs-error="name"></span>
+                        </label>
+                        <label class="field">
+                            <span class="visually-hidden">Почта</span>
+                            <input type="email" name="email" placeholder="Почта" autocomplete="email" required data-fs-field />
+                            <span class="field__error" data-fs-error="email"></span>
+                        </label>
+                        <button class="button button--pink" type="submit" data-fs-submit-btn>Подписаться</button>
+                    </form>
+                    <p class="subscribe__note">Новый разбор, один полезный запрос и&nbsp;честные новости. Отписаться можно в&nbsp;один клик.</p>
+                    <p class="subscribe__status" data-fs-success>Готово! Первое письмо придёт в&nbsp;ближайший понедельник.</p>
+                    <p class="subscribe__status" data-fs-error>Не получилось отправить. Попробуйте ещё раз.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__top">
+                <div class="footer__nav">
+                    <a class="logo logo--light" href="./index.html"><img src="./images/logo-black.svg" width="2820" height="723" alt="иинфа, на главную" loading="lazy" /></a>
+                    <ul class="footer__menu">
+                        <li><a href="./index.html">Главная</a></li>
+                        <li><a href="./articles.html">Статьи</a></li>
+                        <li><a href="./glossary.html">Глоссарий</a></li>
+                        <li><a href="./about.html">О сайте</a></li>
+                        <li><a href="#subscribe">Рассылка</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contacts">
+                    <h2>Написать нам</h2>
+                    <p><a href="mailto:packfordesigners@gmail.com">packfordesigners@gmail.com</a></p>
+                    <ul class="footer__social">
+                        <li><a href="./404.html" aria-label="иинфа в Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/></svg></a></li>
+                        <li><a href="./404.html" aria-label="иинфа в Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.6 0 1.9l4.6 1.6 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.5 4.7 3.5c.7.5 1.6.1 1.8-.7l3.1-15.2c.2-1-.8-1.8-1.8-1.3Z" fill="currentColor"/><path d="m9.2 14.6 8.6-7.4" stroke="#EDE4E0" stroke-width="1.6" stroke-linecap="round"/></svg></a></li>
+                    </ul>
+                </div>
+                <img class="footer__mascot" src="./images/mascot/lamp.png" width="782" height="817" alt="Маскот иинфы включает лампочку" loading="lazy" />
+            </div>
+            <img class="footer__wordmark" src="./images/logo-beige.svg" width="2820" height="723" alt="" loading="lazy" />
+        </footer>
+
+        <script>
+            window.formspree =
+            window.formspree ||
+            function () {
+                (formspree.q = formspree.q || []).push(arguments);
+            };
+            formspree("initForm", {
+                formElement: "#my-form",
+                formId: "meaezwjq",
+            });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    </body>
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Квиз «Основы ИИ» · иинфа</title>
+        <meta name="description" content="Десять вопросов о том, как устроены нейросети и как пользоваться ими без риска. Проверьте свой уровень." />
+        <link rel="preload" href="./fonts/RFDewiCondensed-Black.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="preload" href="./fonts/TTNeoris-Regular.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="stylesheet" href="./stylesheets/main.css" />
+        <script>document.documentElement.classList.add('js')</script>
+    </head>
+    <body id="top">
+        <header class="hero hero--page hero--green">
+            <nav class="nav" aria-label="Основное меню">
+                <a class="logo" href="./index.html"><img src="./images/logo-white.svg" width="2820" height="723" alt="иинфа, на главную" /></a>
+                <div class="nav__links">
+                    <a class="nav__link" href="./index.html">Главная</a>
+                    <a class="nav__link" href="./articles.html">Статьи</a>
+                    <a class="nav__link" href="./glossary.html">Глоссарий</a>
+                    <a class="nav__link" href="./about.html">О сайте</a>
+                </div>
+            </nav>
+
+            <div class="hero__grid">
+                <img class="hero__mascot hero__mascot--top" src="./images/mascot/book.png" width="800" height="800" alt="Маскот иинфы читает книгу" fetchpriority="high" />
+                <h1 class="hero__title">Основы ИИ</h1>
+                <div class="hero__foot">
+                    <p class="hero__lead">Десять вопросов о&nbsp;том, как устроены нейросети и&nbsp;как пользоваться ими без риска. Займёт пять минут.</p>
+                    <p class="article__meta">Квиз · 10 вопросов · 5 мин</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="test" aria-label="Квиз «Основы ИИ»" data-quiz>
+                <div class="test__inner">
+                    <div class="test__progress">
+                        <p class="test__count" aria-live="polite">Вопрос <span data-quiz-step>1</span> из&nbsp;<span data-quiz-total>10</span></p>
+                        <span class="test__bar" aria-hidden="true"><span data-quiz-bar></span></span>
+                    </div>
+
+                    <div class="question" role="group" aria-labelledby="q1">
+                        <h2 id="q1" class="question__title" tabindex="-1">Что такое нейросеть?</h2>
+                        <div class="question__options">
+                            <button class="option" type="button" data-correct>Программа, которая научилась на&nbsp;множестве примеров</button>
+                            <button class="option" type="button">Живой оператор, который отвечает в&nbsp;чате</button>
+                            <button class="option" type="button">База данных со&nbsp;всеми ответами интернета</button>
+                        </div>
+                        <p class="question__note" hidden>Она не&nbsp;ищет готовый ответ и&nbsp;не&nbsp;думает как человек, а&nbsp;подбирает самый подходящий вариант по&nbsp;примерам, на&nbsp;которых училась.</p>
+                    </div>
+
+                    <div class="question" role="group" aria-labelledby="q2">
+                        <h2 id="q2" class="question__title" tabindex="-1">Как называется запрос, который вы пишете нейросети?</h2>
+                        <div class="question__options">
+                            <button class="option" type="button">Токен</button>
+                            <button class="option" type="button" data-correct>Промпт</button>
+                            <button class="option" type="button">Датасет</button>
+                        </div>
+                        <p class="question__note" hidden>Чем подробнее промпт, тем точнее ответ. Объясняйте задачу, как новому сотруднику.</p>
+                    </div>
+
+                    <div class="question" role="group" aria-labelledby="q3">
+                        <h2 id="q3" class="question__title" tabindex="-1">Нейросеть уверенно назвала книгу, которой не&nbsp;существует. Как это называется?</h2>
+                        <div class="question__options">
+                            <button class="option" type="button">Дипфейк</button>
+                            <button class="option" type="button">Дообучение</button>
+                            <button class="option" type="button" data-correct>Галлюцинация</button>
+                        </div>
+                        <p class="question__note" hidden>Нейросеть может ошибаться очень убедительно: выдумать книгу, дату или закон.</p>
+                    </div>
+
+                    <div class="question" role="group" aria-labelledby="q4">
+                        <h2 id="q4" class="question__title" tabindex="-1">Нейросеть назвала дозировку лекарства. Что делать?</h2>
+                        <div class="question__options">
+                            <button class="option" type="button">Довериться, нейросети не&nbsp;ошибаются</button>
+                            <button class="option" type="button" data-correct>Проверить в&nbsp;инструкции или спросить врача</button>
+                            <button class="option" type="button">Спросить ещё раз: второй ответ всегда верный</button>
+                        </div>
+                        <p class="question__note" hidden>Всё, что касается здоровья, денег и&nbsp;законов, обязательно перепроверяйте по&nbsp;надёжным источникам.</p>
+                    </div>
+
+                    <div class="question" role="group" aria-labelledby="q5">
+                        <h2 id="q5" class="question__title" tabindex="-1">Какой запрос даст более полезный ответ?</h2>
+                        <div class="question__options">
+                            <button class="option" type="button">«Напиши письмо»</button>
+                            <button class="option" type="button">«Письмо, срочно!!!»</button>
+                            <button class="option" type="button" data-correct>«Напиши вежливое письмо начальнику: прошу перенести сдачу отчёта с&nbsp;пятницы на&nbsp;вторник, потому что болел»</button>
+                        </div>
+                        <p class="question__note" hidden>Кому, о&nbsp;чём, зачем и&nbsp;каким тоном: чем больше деталей в&nbsp;запросе, тем меньше правок потом.</p>
+                    </div>
+
+                    <div class="question" role="group" aria-labelledby="q6">
+                        <h2 id="q6" class="question__title" tabindex="-1">Звонит «сын» его голосом и&nbsp;просит срочно перевести деньги. Что делать?</h2>
+                        <div class="question__options">
+                            <button class="option" type="button" data-correct>Положить трубку и&nbsp;перезвонить сыну самому</button>
+                            <button class="option" type="button">Перевести, голос&nbsp;же его</button>
+                            <button class="option" type="button">Попросить прислать голосовое сообщение</button>
+                        </div>
+                        <p class="question__note" hidden>Нейросеть подделывает голос по&nbsp;паре секунд записи, и&nbsp;голосовое сообщение тоже подделают. Перезвоните на&nbsp;номер, который знаете сами.</p>
+                    </div>
+
+                    <div class="question" role="group" aria-labelledby="q7">
+                        <h2 id="q7" class="question__title" tabindex="-1">Что не&nbsp;стоит отправлять в&nbsp;чат-бот?</h2>
+                        <div class="question__options">
+                            <button class="option" type="button">Рецепт пирога</button>
+                            <button class="option" type="button" data-correct>Паспортные данные и&nbsp;пароли</button>
+                            <button class="option" type="button">Черновик письма без личных данных</button>
+                        </div>
+                        <p class="question__note" hidden>Переписка может храниться на&nbsp;серверах компании, поэтому личное и&nbsp;секретное лучше оставить при себе.</p>
+                    </div>
+
+                    <div class="question" role="group" aria-labelledby="q8">
+                        <h2 id="q8" class="question__title" tabindex="-1">Что значит «мультимодальная» нейросеть?</h2>
+                        <div class="question__options">
+                            <button class="option" type="button">Работает сразу на&nbsp;нескольких устройствах</button>
+                            <button class="option" type="button" data-correct>Понимает и&nbsp;текст, и&nbsp;фото, и&nbsp;голос</button>
+                            <button class="option" type="button">Отвечает только текстом, но&nbsp;очень быстро</button>
+                        </div>
+                        <p class="question__note" hidden>Такой нейросети можно показать фото квитанции и&nbsp;спросить, что в&nbsp;ней.</p>
+                    </div>
+
+                    <div class="question" role="group" aria-labelledby="q9">
+                        <h2 id="q9" class="question__title" tabindex="-1">Почему нейросеть «забывает» начало длинной переписки?</h2>
+                        <div class="question__options">
+                            <button class="option" type="button">Она устала</button>
+                            <button class="option" type="button">Разработчики стирают историю каждые 10&nbsp;минут</button>
+                            <button class="option" type="button" data-correct>У&nbsp;неё ограниченное контекстное окно</button>
+                        </div>
+                        <p class="question__note" hidden>Нейросеть держит в&nbsp;голове только часть разговора. Для новой темы лучше начать новый чат.</p>
+                    </div>
+
+                    <div class="question" role="group" aria-labelledby="q10">
+                        <h2 id="q10" class="question__title" tabindex="-1">Что из&nbsp;этого языковая модель?</h2>
+                        <div class="question__options">
+                            <button class="option" type="button" data-correct>GigaChat</button>
+                            <button class="option" type="button">Яндекс Карты</button>
+                            <button class="option" type="button">Excel</button>
+                        </div>
+                        <p class="question__note" hidden>GigaChat, ChatGPT, Claude и&nbsp;Алиса работают с&nbsp;текстом: пишут, переводят, пересказывают.</p>
+                    </div>
+
+                    <button class="button test__next" type="button" hidden data-quiz-next>Дальше</button>
+
+                    <div class="test__result" hidden data-quiz-result>
+                        <p class="test__score"><span data-quiz-score>0</span> из&nbsp;10</p>
+                        <h2 class="test__level" tabindex="-1" data-quiz-level></h2>
+                        <p class="test__text" data-quiz-text></p>
+                        <div class="test__actions">
+                            <button class="button" type="button" data-quiz-restart>Пройти ещё раз</button>
+                            <a class="button button--outline" href="./glossary.html">Открыть глоссарий</a>
+                        </div>
+                    </div>
+                </div>
+                <img class="catalog__peek" src="./images/mascot/peek.png" width="400" height="186" alt="" loading="lazy" />
+            </section>
+
+            <section class="subscribe subscribe--light" id="subscribe" aria-labelledby="subscribe-title">
+                <h2 id="subscribe-title" class="subscribe__heading">Узнавай первым о&nbsp;новых технологиях</h2>
+                <div class="subscribe__middle">
+                    <form id="my-form" class="subscribe__form">
+                        <label class="field">
+                            <span class="visually-hidden">Как к вам обращаться</span>
+                            <input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="given-name" required data-fs-field />
+                            <span class="field__error" data-fs-error="name"></span>
+                        </label>
+                        <label class="field">
+                            <span class="visually-hidden">Почта</span>
+                            <input type="email" name="email" placeholder="Почта" autocomplete="email" required data-fs-field />
+                            <span class="field__error" data-fs-error="email"></span>
+                        </label>
+                        <button class="button button--pink" type="submit" data-fs-submit-btn>Подписаться</button>
+                    </form>
+                    <p class="subscribe__note">Новый разбор, один полезный запрос и&nbsp;честные новости. Отписаться можно в&nbsp;один клик.</p>
+                    <p class="subscribe__status" data-fs-success>Готово! Первое письмо придёт в&nbsp;ближайший понедельник.</p>
+                    <p class="subscribe__status" data-fs-error>Не получилось отправить. Попробуйте ещё раз.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__top">
+                <div class="footer__nav">
+                    <a class="logo logo--light" href="./index.html"><img src="./images/logo-black.svg" width="2820" height="723" alt="иинфа, на главную" loading="lazy" /></a>
+                    <ul class="footer__menu">
+                        <li><a href="./index.html">Главная</a></li>
+                        <li><a href="./articles.html">Статьи</a></li>
+                        <li><a href="./glossary.html">Глоссарий</a></li>
+                        <li><a href="./about.html">О сайте</a></li>
+                        <li><a href="#subscribe">Рассылка</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contacts">
+                    <h2>Написать нам</h2>
+                    <p><a href="mailto:packfordesigners@gmail.com">packfordesigners@gmail.com</a></p>
+                    <ul class="footer__social">
+                        <li><a href="./404.html" aria-label="иинфа в Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/></svg></a></li>
+                        <li><a href="./404.html" aria-label="иинфа в Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.6 0 1.9l4.6 1.6 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.5 4.7 3.5c.7.5 1.6.1 1.8-.7l3.1-15.2c.2-1-.8-1.8-1.8-1.3Z" fill="currentColor"/><path d="m9.2 14.6 8.6-7.4" stroke="#EDE4E0" stroke-width="1.6" stroke-linecap="round"/></svg></a></li>
+                    </ul>
+                </div>
+                <img class="footer__mascot" src="./images/mascot/lamp.png" width="782" height="817" alt="Маскот иинфы включает лампочку" loading="lazy" />
+            </div>
+            <img class="footer__wordmark" src="./images/logo-beige.svg" width="2820" height="723" alt="" loading="lazy" />
+        </footer>
+
+        <script>
+            window.formspree =
+            window.formspree ||
+            function () {
+                (formspree.q = formspree.q || []).push(arguments);
+            };
+            formspree("initForm", {
+                formElement: "#my-form",
+                formId: "meaezwjq",
+            });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    </body>
+</html>

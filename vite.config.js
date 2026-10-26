@@ -9,87 +9,59 @@ const outDir = path.resolve(__dirname, 'docs')
 const pages = {
   main: {
     file: 'index.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   about: {
     file: 'about.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   articles: {
     file: 'articles.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   glossary: {
     file: 'glossary.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   articleLetter: {
     file: 'article-letter.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   articleGarden: {
     file: 'article-garden.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   articlePhotos: {
     file: 'article-photos.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   articleDeepfake: {
     file: 'article-deepfake.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   articleFirstChat: {
     file: 'article-first-chat.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   articlePrompt: {
     file: 'article-prompt.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   articlePaid: {
     file: 'article-paid.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   articleMeeting: {
     file: 'article-meeting.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   quizBasics: {
     file: 'quiz-basics.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   },
   notFound: {
     file: '404.html',
-    chunks: [
-      '/scripts/index.js'
-    ]
+    chunks: ['/scripts/index.js']
   }
 }
 
@@ -100,21 +72,24 @@ const chunksByFile = Object.fromEntries(
 function pageChunksPlugin() {
   return {
     name: 'page-chunks',
-    transformIndexHtml(html, ctx) {
-      const relFile = path
-        .relative(root, ctx.filename)
-        .split(path.sep)
-        .join('/')
-      const chunks = chunksByFile[relFile]
-      if (!chunks) return html
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html, ctx) {
+        const relFile = path
+          .relative(root, ctx.filename)
+          .split(path.sep)
+          .join('/')
+        const chunks = chunksByFile[relFile]
+        if (!chunks) return html
 
-      return {
-        html,
-        tags: chunks.map((src) => ({
-          tag: 'script',
-          attrs: { type: 'module', src },
-          injectTo: 'body'
-        }))
+        return {
+          html,
+          tags: chunks.map((src) => ({
+            tag: 'script',
+            attrs: { type: 'module', src },
+            injectTo: 'body'
+          }))
+        }
       }
     }
   }
@@ -122,7 +97,7 @@ function pageChunksPlugin() {
 
 export default defineConfig(({ command }) => ({
   root,
-  base: command === 'build' ? '/static-site-09-25/' : '/',
+  base: command === 'build' ? '/pak/' : '/',
   plugins: [pageChunksPlugin()],
   build: {
     outDir,
@@ -140,4 +115,3 @@ export default defineConfig(({ command }) => ({
     open: true
   }
 }))
-
